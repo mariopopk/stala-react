@@ -1,0 +1,14 @@
+$primary: #3a3a3a;
+$secondary: #8c6e43;
+$danger: #be1217;
+$success: #3e7957;
+$light: #fefaf6;
+
+$custom-colors: (
+  "tertiary": #bca279,
+);
+
+$enable-rounded: false;
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "./stala.scss";
