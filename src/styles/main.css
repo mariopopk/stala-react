@@ -1,4 +1,14 @@
 @charset "UTF-8";
+@font-face {
+  font-family: "GT Walsheim Pro";
+  src: url("https://assets.ctfassets.net/qx1dg9syx02d/4Dc4toUiYTF0x6N9KrkvoM/6d63f8224488311101dde30881e9f361/GT-Walsheim-Pro-Light.eot");
+  src: url("https://assets.ctfassets.net/qx1dg9syx02d/2njs2KpH9J7ReTEyNRAUjl/2801b191aadfc59eb74eeb1d6001fcdf/GT-Walsheim-Pro-Light.woff") format("woff"), url("https://assets.ctfassets.net/qx1dg9syx02d/7B0jvO2rEELBkXhMy6TZpf/0db731d8efaf271ac99c182c54a67827/GT-Walsheim-Pro-Light.woff2") format("woff2"), url("https://assets.ctfassets.net/qx1dg9syx02d/4Dc4toUiYTF0x6N9KrkvoM/6d63f8224488311101dde30881e9f361/GT-Walsheim-Pro-Light.eot") format("embedded-opentype");
+}
+@font-face {
+  font-family: "Domaine Display";
+  src: url("https://assets.ctfassets.net/qx1dg9syx02d/6IuEKW1wVU6UUpA150DwDY/de4614619609f5290641dff65cf573ab/DomaineDisplayWeb-Regular.eot");
+  src: url("https://assets.ctfassets.net/qx1dg9syx02d/4OUjyBheZQlfntjN8eC54y/268f42ce87de57562c4cb53754aed709/DomaineDisplayWeb-Regular.woff") format("woff"), url("https://assets.ctfassets.net/qx1dg9syx02d/4cr202Hpb4qQS640z9aNg8/d84f4b62710b7e58e1198fcdac4b6f09/DomaineDisplayWeb-Regular.woff2") format("woff2"), url("https://assets.ctfassets.net/qx1dg9syx02d/6IuEKW1wVU6UUpA150DwDY/de4614619609f5290641dff65cf573ab/DomaineDisplayWeb-Regular.eot") format("embedded-opentype");
+}
 /*!
  * Bootstrap v5.0.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -27,7 +37,7 @@
   --bs-danger: #be1217;
   --bs-light: #fefaf6;
   --bs-dark: #212529;
-  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-sans-serif: "GT Walsheim Pro", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
 }
@@ -2116,22 +2126,22 @@ progress {
 }
 
 .col-form-label {
-  padding-top: calc(0.375rem + 1px);
-  padding-bottom: calc(0.375rem + 1px);
+  padding-top: calc(0.375rem + 2px);
+  padding-bottom: calc(0.375rem + 2px);
   margin-bottom: 0;
   font-size: inherit;
-  line-height: 1.5;
+  line-height: 1;
 }
 
 .col-form-label-lg {
-  padding-top: calc(0.5rem + 1px);
-  padding-bottom: calc(0.5rem + 1px);
+  padding-top: calc(0.5rem + 2px);
+  padding-bottom: calc(0.5rem + 2px);
   font-size: 1.25rem;
 }
 
 .col-form-label-sm {
-  padding-top: calc(0.25rem + 1px);
-  padding-bottom: calc(0.25rem + 1px);
+  padding-top: calc(0.25rem + 2px);
+  padding-bottom: calc(0.25rem + 2px);
   font-size: 0.875rem;
 }
 
@@ -2147,11 +2157,11 @@ progress {
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1;
   color: #212529;
-  background-color: #fff;
+  background-color: transparent;
   background-clip: padding-box;
-  border: 1px solid #ced4da;
+  border: 2px solid #3a3a3a;
   appearance: none;
   border-radius: 0;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -2169,16 +2179,16 @@ progress {
 }
 .form-control:focus {
   color: #212529;
-  background-color: #fff;
+  background-color: transparent;
   border-color: #9d9d9d;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(58, 58, 58, 0.25);
 }
 .form-control::-webkit-date-and-time-value {
-  height: 1.5em;
+  height: 1em;
 }
 .form-control::placeholder {
-  color: #6c757d;
+  color: #3a3a3a;
   opacity: 1;
 }
 .form-control:disabled, .form-control[readonly] {
@@ -2195,7 +2205,7 @@ progress {
   border-color: inherit;
   border-style: solid;
   border-width: 0;
-  border-inline-end-width: 1px;
+  border-inline-end-width: 2px;
   border-radius: 0;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -2217,7 +2227,7 @@ progress {
   border-color: inherit;
   border-style: solid;
   border-width: 0;
-  border-inline-end-width: 1px;
+  border-inline-end-width: 2px;
   border-radius: 0;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -2235,11 +2245,11 @@ progress {
   width: 100%;
   padding: 0.375rem 0;
   margin-bottom: 0;
-  line-height: 1.5;
+  line-height: 1;
   color: #212529;
   background-color: transparent;
   border: solid transparent;
-  border-width: 1px 0;
+  border-width: 2px 0;
 }
 .form-control-plaintext.form-control-sm, .form-control-plaintext.form-control-lg {
   padding-right: 0;
@@ -2247,7 +2257,7 @@ progress {
 }
 
 .form-control-sm {
-  min-height: calc(1.5em + 0.5rem + 2px);
+  min-height: calc(1em + 0.5rem + 4px);
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
 }
@@ -2263,7 +2273,7 @@ progress {
 }
 
 .form-control-lg {
-  min-height: calc(1.5em + 1rem + 2px);
+  min-height: calc(1em + 1rem + 4px);
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
 }
@@ -2279,13 +2289,13 @@ progress {
 }
 
 textarea.form-control {
-  min-height: calc(1.5em + 0.75rem + 2px);
+  min-height: calc(1em + 0.75rem + 4px);
 }
 textarea.form-control-sm {
-  min-height: calc(1.5em + 0.5rem + 2px);
+  min-height: calc(1em + 0.5rem + 4px);
 }
 textarea.form-control-lg {
-  min-height: calc(1.5em + 1rem + 2px);
+  min-height: calc(1em + 1rem + 4px);
 }
 
 .form-control-color {
@@ -2297,10 +2307,10 @@ textarea.form-control-lg {
   cursor: pointer;
 }
 .form-control-color::-moz-color-swatch {
-  height: 1.5em;
+  height: 1em;
 }
 .form-control-color::-webkit-color-swatch {
-  height: 1.5em;
+  height: 1em;
 }
 
 .form-select {
@@ -2309,14 +2319,14 @@ textarea.form-control-lg {
   padding: 0.375rem 2.25rem 0.375rem 0.75rem;
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1;
   color: #212529;
-  background-color: #fff;
+  background-color: transparent;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
   background-size: 16px 12px;
-  border: 1px solid #ced4da;
+  border: 2px solid #3a3a3a;
   border-radius: 0;
   appearance: none;
 }
@@ -2367,7 +2377,7 @@ textarea.form-control-lg {
   height: 1em;
   margin-top: 0.25em;
   vertical-align: top;
-  background-color: #fff;
+  background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -2532,7 +2542,7 @@ textarea.form-control-lg {
 }
 .form-floating > .form-control,
 .form-floating > .form-select {
-  height: calc(3.5rem + 2px);
+  height: calc(3.5rem + 4px);
   padding: 1rem 0.75rem;
 }
 .form-floating > label {
@@ -2542,7 +2552,7 @@ textarea.form-control-lg {
   height: 100%;
   padding: 1rem 0.75rem;
   pointer-events: none;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   transform-origin: 0 0;
   transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
 }
@@ -2609,12 +2619,12 @@ textarea.form-control-lg {
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1;
   color: #212529;
   text-align: center;
   white-space: nowrap;
   background-color: #e9ecef;
-  border: 1px solid #ced4da;
+  border: 2px solid #3a3a3a;
 }
 
 .input-group-lg > .form-control,
@@ -2639,7 +2649,7 @@ textarea.form-control-lg {
 }
 
 .input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
-  margin-left: -1px;
+  margin-left: -2px;
 }
 
 .valid-feedback {
@@ -2672,11 +2682,11 @@ textarea.form-control-lg {
 
 .was-validated .form-control:valid, .form-control.is-valid {
   border-color: #3e7957;
-  padding-right: calc(1.5em + 0.75rem);
+  padding-right: calc(1em + 0.75rem);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%233e7957' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
-  background-position: right calc(0.375em + 0.1875rem) center;
-  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+  background-position: right calc(0.25em + 0.1875rem) center;
+  background-size: calc(0.5em + 0.375rem) calc(0.5em + 0.375rem);
 }
 .was-validated .form-control:valid:focus, .form-control.is-valid:focus {
   border-color: #3e7957;
@@ -2684,8 +2694,8 @@ textarea.form-control-lg {
 }
 
 .was-validated textarea.form-control:valid, textarea.form-control.is-valid {
-  padding-right: calc(1.5em + 0.75rem);
-  background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
+  padding-right: calc(1em + 0.75rem);
+  background-position: top calc(0.25em + 0.1875rem) right calc(0.25em + 0.1875rem);
 }
 
 .was-validated .form-select:valid, .form-select.is-valid {
@@ -2695,7 +2705,7 @@ textarea.form-control-lg {
   padding-right: 4.125rem;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e"), url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%233e7957' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
   background-position: right 0.75rem center, center right 2.25rem;
-  background-size: 16px 12px, calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+  background-size: 16px 12px, calc(0.5em + 0.375rem) calc(0.5em + 0.375rem);
 }
 .was-validated .form-select:valid:focus, .form-select.is-valid:focus {
   border-color: #3e7957;
@@ -2760,11 +2770,11 @@ textarea.form-control-lg {
 
 .was-validated .form-control:invalid, .form-control.is-invalid {
   border-color: #be1217;
-  padding-right: calc(1.5em + 0.75rem);
+  padding-right: calc(1em + 0.75rem);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23be1217'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23be1217' stroke='none'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
-  background-position: right calc(0.375em + 0.1875rem) center;
-  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+  background-position: right calc(0.25em + 0.1875rem) center;
+  background-size: calc(0.5em + 0.375rem) calc(0.5em + 0.375rem);
 }
 .was-validated .form-control:invalid:focus, .form-control.is-invalid:focus {
   border-color: #be1217;
@@ -2772,8 +2782,8 @@ textarea.form-control-lg {
 }
 
 .was-validated textarea.form-control:invalid, textarea.form-control.is-invalid {
-  padding-right: calc(1.5em + 0.75rem);
-  background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
+  padding-right: calc(1em + 0.75rem);
+  background-position: top calc(0.25em + 0.1875rem) right calc(0.25em + 0.1875rem);
 }
 
 .was-validated .form-select:invalid, .form-select.is-invalid {
@@ -2783,7 +2793,7 @@ textarea.form-control-lg {
   padding-right: 4.125rem;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e"), url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23be1217'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23be1217' stroke='none'/%3e%3c/svg%3e");
   background-position: right 0.75rem center, center right 2.25rem;
-  background-size: 16px 12px, calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+  background-size: 16px 12px, calc(0.5em + 0.375rem) calc(0.5em + 0.375rem);
 }
 .was-validated .form-select:invalid:focus, .form-select.is-invalid:focus {
   border-color: #be1217;
@@ -10447,6 +10457,21 @@ textarea.form-control-lg {
 }
 .stala-logo {
   letter-spacing: 2px;
+}
+
+.stala-nav-item {
+  letter-spacing: 2px;
+  margin-right: 1.2rem;
+}
+
+.image-cover {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.btn-lead {
+  min-width: 190px;
 }
 
 /*# sourceMappingURL=main.css.map */
