@@ -19,7 +19,7 @@ function Jumbotron({
         fontColor
       }
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${resolveHost(
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.5)), url('${resolveHost(
           image
         )}')`,
         backgroundPosition: imagePosition,

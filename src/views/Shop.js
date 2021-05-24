@@ -10,7 +10,7 @@ function Shop() {
       name: "Men",
       image: {
         url: "/uploads/mens_main_af526ac1a0.jpg",
-        position: "center 55%",
+        position: "100% 55%",
       },
 
       catchphrase: "New feeling. Discover the latest arrivals.",
@@ -29,7 +29,7 @@ function Shop() {
         url: "/uploads/kids_main_3d5e929b3f.jpg",
         position: "center 10%",
       },
-      catchphrase: "New feeling. Discover the latest arrivals.",
+      catchphrase: "Fun, easy and affordable",
     },
   };
 
@@ -41,7 +41,7 @@ function Shop() {
       image={image.url}
       imagePosition={image.position}
       isDark={true}
-      height={600}
+      height={700}
       button={
         <Link to="/shop/men/new" className="btn btn-outline-light btn-lead">
           New Arrivals

@@ -2,7 +2,11 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
 function NavLinks() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
+
+  const panelClasses = isOpen
+    ? " d-block vh-100 w-100 position-absolute bg-dark text-white p-4"
+    : "";
 
   return (
     <>
@@ -14,11 +18,22 @@ function NavLinks() {
         aria-controls="navbarSupportedContent"
         aria-expanded="false"
         aria-label="Toggle navigation"
+        onClick={() => {
+          setIsOpen(!isOpen);
+        }}
       >
         <span className="navbar-toggler-icon"></span>
       </button>
-      <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav me-auto mb-2 mb-lg-0 fw-bold text-uppercase ">
+      <div
+        className={"collapse navbar-collapse " + panelClasses}
+        id="navbarSupportedContent"
+        style={{
+          top: 62,
+          bottom: 100,
+          left: 0,
+        }}
+      >
+        <ul className="navbar-nav me-auto mb-2 mb-lg-0 fw-bold text-uppercase  w-100 h-100">
           <li className="nav-item stala-nav-item">
             <NavLink
               className="nav-link"
