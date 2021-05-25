@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
 function NavLinks() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const panelClasses = isOpen
     ? " d-block vh-100 w-100 position-absolute bg-dark text-white p-4"
