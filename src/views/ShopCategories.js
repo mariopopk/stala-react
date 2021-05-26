@@ -1,5 +1,6 @@
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
+import Carousel from "../components/Carousel";
 import ImagesSnapshot from "../components/ImagesSnapshot";
 import Jumbotron from "../components/Jumbotron";
 
@@ -218,10 +219,19 @@ function ShopCategories() {
         {subcategories.map(({ name, id, image }) => {
           return (
             <div key={id} className="col-6 col-md-3">
-              <ImagesSnapshot image={image.url} title={name} />
+              <ImagesSnapshot
+                href={`/shop/${category}`}
+                image={image.url}
+                title={name}
+              />
             </div>
           );
         })}
+      </div>
+
+      <h3 className="text-center my-5">Our Greatest Hits</h3>
+      <div className="d-flex flex-wrap container mt-5">
+        <Carousel />
       </div>
     </>
   );

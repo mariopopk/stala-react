@@ -10,7 +10,7 @@ function Shop() {
         <div>
           <div className="col-6 col-md-3">
             <div className="p-1">
-              <img src=""></img>
+              <img src="" alt=""></img>
             </div>
           </div>
         </div>

@@ -27,6 +27,23 @@ $alert-height: 34px;
   height: $navbar-height;
 }
 
+.small-title {
+  font-weight: 800;
+  line-height: 1.2;
+  font-size: 0.85rem;
+}
+
+.product-carousel {
+  .carousel-inner {
+    display: flex;
+
+    .carousel-item {
+      display: block;
+      margin-right: unset;
+    }
+  }
+}
+
 //  d-block vh-100 w-100 position-absolute bg-dark text-white p-4
 
 .sidepanel {
