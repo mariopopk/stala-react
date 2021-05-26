@@ -1,14 +1,24 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
 @font-face {
   font-family: "GT Walsheim Pro";
   src: url("https://assets.ctfassets.net/qx1dg9syx02d/4Dc4toUiYTF0x6N9KrkvoM/6d63f8224488311101dde30881e9f361/GT-Walsheim-Pro-Light.eot");
   src: url("https://assets.ctfassets.net/qx1dg9syx02d/2njs2KpH9J7ReTEyNRAUjl/2801b191aadfc59eb74eeb1d6001fcdf/GT-Walsheim-Pro-Light.woff") format("woff"), url("https://assets.ctfassets.net/qx1dg9syx02d/7B0jvO2rEELBkXhMy6TZpf/0db731d8efaf271ac99c182c54a67827/GT-Walsheim-Pro-Light.woff2") format("woff2"), url("https://assets.ctfassets.net/qx1dg9syx02d/4Dc4toUiYTF0x6N9KrkvoM/6d63f8224488311101dde30881e9f361/GT-Walsheim-Pro-Light.eot") format("embedded-opentype");
 }
-@font-face {
-  font-family: "Domaine Display";
-  src: url("https://assets.ctfassets.net/qx1dg9syx02d/6IuEKW1wVU6UUpA150DwDY/de4614619609f5290641dff65cf573ab/DomaineDisplayWeb-Regular.eot");
-  src: url("https://assets.ctfassets.net/qx1dg9syx02d/4OUjyBheZQlfntjN8eC54y/268f42ce87de57562c4cb53754aed709/DomaineDisplayWeb-Regular.woff") format("woff"), url("https://assets.ctfassets.net/qx1dg9syx02d/4cr202Hpb4qQS640z9aNg8/d84f4b62710b7e58e1198fcdac4b6f09/DomaineDisplayWeb-Regular.woff2") format("woff2"), url("https://assets.ctfassets.net/qx1dg9syx02d/6IuEKW1wVU6UUpA150DwDY/de4614619609f5290641dff65cf573ab/DomaineDisplayWeb-Regular.eot") format("embedded-opentype");
+h1, .h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-family: "Libre Baskerville", serif;
 }
+
 /*!
  * Bootstrap v5.0.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -10472,6 +10482,33 @@ textarea.form-control-lg {
 
 .btn-lead {
   min-width: 190px;
+}
+
+.navbar {
+  height: 70px;
+}
+
+.sidepanel {
+  display: block !important;
+  height: calc(100vh - 70px);
+  position: absolute;
+  padding: 1rem;
+  margin-top: 70px;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .sidepanel {
+    display: none;
+    height: auto;
+    background-color: transparent;
+    position: unset;
+    color: inherit;
+    padding: inherit;
+    margin-top: inherit;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

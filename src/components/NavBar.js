@@ -4,12 +4,12 @@ import NavUtilities from "./NavUtilities";
 
 function NavBar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-transparent position-absolute w-100">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light  w-100">
       <div className="container">
         <div className="col-4">
           <NavLinks />
         </div>
-        <div className="col-4 ">
+        <div className="col-4 d-flex justify-content-center">
           <NavLogo />
         </div>
         <div className="col-4">

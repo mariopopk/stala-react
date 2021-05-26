@@ -1,3 +1,9 @@
+@use "sass:map";
+// @use "sass:math";
+
+$navbar-height: 70px;
+$alert-height: 34px;
+
 .stala-logo {
   letter-spacing: 2px;
 }
@@ -5,9 +11,6 @@
 .stala-nav-item {
   letter-spacing: 2px;
   margin-right: 1.2rem;
-}
-
-.stala-nav-item:hover {
 }
 
 .image-cover {
@@ -18,4 +21,33 @@
 
 .btn-lead {
   min-width: 190px;
+}
+
+.navbar {
+  height: $navbar-height;
+}
+
+//  d-block vh-100 w-100 position-absolute bg-dark text-white p-4
+
+.sidepanel {
+  display: block !important;
+  height: calc(100vh - #{$navbar-height});
+  position: absolute;
+  padding: map.get($spacers, 3);
+  margin-top: $navbar-height;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+@include media-breakpoint-up(lg) {
+  .sidepanel {
+    display: none;
+    height: auto;
+    background-color: transparent;
+    position: unset;
+    color: inherit;
+    padding: inherit;
+    margin-top: inherit;
+  }
 }

@@ -5,6 +5,8 @@ import Page from "./views/Page";
 import Shop from "./views/Shop";
 import NavBar from "./components/NavBar";
 import Alert from "./components/Alert";
+import ShopCategories from "./views/ShopCategories";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -23,6 +25,9 @@ function App() {
           <Route exact path="/shop/:category">
             <Shop />
           </Route>
+          <Route exact path="/shop/:category/categories">
+            <ShopCategories />
+          </Route>
           <Route path="/site/:slug">
             <Page />
           </Route>
@@ -30,6 +35,7 @@ function App() {
             <NotFound />
           </Route>
         </Switch>
+        <Footer />
       </div>
     </Router>
   );

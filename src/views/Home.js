@@ -1,5 +1,7 @@
+import Jumbotron from "../components/Jumbotron";
+
 function Home(props) {
-  return <h1>Homepage </h1>;
+  return <Jumbotron />;
 }
 
 export default Home;
