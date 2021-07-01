@@ -59,12 +59,16 @@ $font-family-sans-serif: "GT Walsheim Pro",
 $input-border-color: $primary;
 $input-placeholder-color: $primary;
 $input-bg: transparent;
-$input-border-width: 2px;
+$input-border-width: 1px;
 $input-line-height: 1;
 
 // Carousel
 $carousel-control-color: $primary;
 $carousel-control-width: auto;
+
+// Tabs
+$nav-tabs-border-color: $primary;
+$nav-tabs-link-active-border-color: $primary $primary transparent;
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
 @import "./stala.scss";

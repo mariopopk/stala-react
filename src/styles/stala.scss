@@ -4,6 +4,8 @@
 $navbar-height: 70px;
 $alert-height: 34px;
 
+// Nav
+
 .stala-logo {
   letter-spacing: 2px;
 }
@@ -12,6 +14,19 @@ $alert-height: 34px;
   letter-spacing: 2px;
   margin-right: 1.2rem;
 }
+
+.accordion-content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+  &.show {
+    height: auto;
+    max-height: 999px;
+    transition: max-height 0.4s cubic-bezier(1, 0, 1, 0);
+  }
+}
+
+// Jumbotron
 
 .image-cover {
   background-position: center;
@@ -43,8 +58,6 @@ $alert-height: 34px;
     }
   }
 }
-
-//  d-block vh-100 w-100 position-absolute bg-dark text-white p-4
 
 .sidepanel {
   display: block !important;

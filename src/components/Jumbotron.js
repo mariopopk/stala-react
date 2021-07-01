@@ -8,6 +8,7 @@ function Jumbotron({
   height,
   imagePosition,
   className,
+  titleClasses,
 }) {
   return (
     <div
@@ -24,7 +25,7 @@ function Jumbotron({
       }}
     >
       <div className="">
-        <h1 className="display-5 text-uppercase">{title}</h1>
+        <h1 className={"display-5 text-uppercase " + titleClasses}>{title}</h1>
         <div className="mt-3 text-center">
           {content && <p className="mb-4">{content}</p>}
 

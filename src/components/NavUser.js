@@ -1,14 +1,25 @@
 import { useState } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { setCurrentUser } from "../redux/user/user.actions";
 
-function NavUser({ currentUser }) {
+function NavUser({ currentUser, setCurrentUser }) {
   const [isOpen, setIsOpen] = useState(false);
+
   const buttonId = "userMenuButton";
 
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
+
+  // const handleLogin = () => {
+  //   setCurrentUser({
+  //     id: 1,
+  //     username: "mpopoca",
+  //     firstName: "Mario",
+  //     lastName: "Popoca",
+  //   });
+  // };
 
   return (
     <>
@@ -30,6 +41,7 @@ function NavUser({ currentUser }) {
           onClick={handleClick}
         >
           <i className="bi bi-person lead"></i>
+          <span className="visually-hidden">My Account</span>
         </button>
         <ul
           className="dropdown-menu border-0 dropdown-menu-dark "
@@ -50,15 +62,15 @@ function NavUser({ currentUser }) {
                 </Link>
               </li>
               <li>
-                <Link
+                <button
                   onClick={() => {
                     setIsOpen(false);
+                    setCurrentUser(null);
                   }}
                   className="dropdown-item "
-                  to="/logout"
                 >
                   Log Out
-                </Link>
+                </button>
               </li>
             </>
           ) : (
@@ -69,7 +81,7 @@ function NavUser({ currentUser }) {
                     setIsOpen(false);
                   }}
                   className="dropdown-item "
-                  to="/"
+                  to="/login"
                 >
                   Sign In | Create Account
                 </Link>
@@ -97,4 +109,8 @@ const mapStateToProps = (state) => ({
   currentUser: state.user.currentUser,
 });
 
-export default connect(mapStateToProps)(NavUser);
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentUser: (user) => dispatch(setCurrentUser(user)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavUser);
