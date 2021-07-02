@@ -1,15 +1,7 @@
 import { resolveHost } from "../utils/host";
 
-function Jumbotron({
-  title,
-  content,
-  button,
-  image,
-  height,
-  imagePosition,
-  className,
-  titleClasses,
-}) {
+function Jumbotron({ title, content, button, image, height, className }) {
+  const opacity = image.opacity || "0.50";
   return (
     <div
       className={
@@ -17,15 +9,15 @@ function Jumbotron({
         className
       }
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.5)), url('${resolveHost(
-          image
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, ${opacity}), rgba(0, 0, 0, ${opacity})), url('${resolveHost(
+          image.url
         )}')`,
-        backgroundPosition: imagePosition,
+        backgroundPosition: image.position,
         height,
       }}
     >
       <div className="">
-        <h1 className={"display-5 text-uppercase " + titleClasses}>{title}</h1>
+        <div className={"display-5 text-uppercase"}>{title}</div>
         <div className="mt-3 text-center">
           {content && <p className="mb-4">{content}</p>}
 

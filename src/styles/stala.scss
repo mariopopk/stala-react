@@ -26,6 +26,60 @@ $alert-height: 34px;
   }
 }
 
+// Carousel
+.carousel:focus-visible,
+.carousel:focus-visible {
+  outline: -webkit-focus-ring-color solid 2px;
+  // box-shadow: 0 0 0 0.25rem rgb(58 58 58 / 25%);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  opacity: 0;
+  top: 45%;
+  bottom: 55%;
+  background: white;
+  padding: 2.25rem 0.6rem;
+}
+
+.carousel:hover .carousel-control-prev,
+.carousel:hover .carousel-control-next {
+  opacity: 1;
+  color: black;
+  transition: opacity 0.2s linear;
+  &.disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+}
+
+.carousel-control-prev:focus,
+.carousel-control-next:focus {
+  opacity: 0;
+}
+
+.carousel-box h1,
+.carousel-box h2,
+.carousel-box h3,
+.carousel-box h4,
+.carousel-box h5,
+.carousel-box h6 {
+  letter-spacing: -1px;
+}
+
+.animated-fade {
+  display: block !important;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.2s, opacity 0.2s linear;
+  &.show {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+// MultiCarousel
+
 // Jumbotron
 
 .image-cover {
@@ -69,8 +123,37 @@ $alert-height: 34px;
   left: 0;
   width: 100%;
 }
+.carousel-item {
+  a {
+    text-decoration: none;
+  }
+}
+.carousel-box {
+  background-color: $light;
+  padding: 2.5rem 1.25rem;
+}
 
 @include media-breakpoint-up(lg) {
+  .w-lg-25 {
+    width: 25% !important;
+  }
+  .carousel-overlay-container {
+    position: absolute;
+    right: 7%;
+    bottom: 10%;
+    left: 7%;
+    top: 10%;
+    > div {
+      display: flex;
+    }
+  }
+
+  .carousel-box {
+    max-width: 400px;
+    background: hsla(0, 0%, 100%, 0.92);
+    padding: 3.5rem 2.25rem;
+  }
+
   .sidepanel {
     display: none;
     height: auto;

@@ -641,7 +641,7 @@ progress {
 }
 @media (min-width: 1400px) {
   .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 1320px;
+    max-width: 1400px;
   }
 }
 .row {
@@ -10485,6 +10485,62 @@ textarea.form-control-lg {
   transition: max-height 0.4s cubic-bezier(1, 0, 1, 0);
 }
 
+.carousel:focus-visible,
+.carousel:focus-visible {
+  outline: -webkit-focus-ring-color solid 2px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  opacity: 0;
+  top: 45%;
+  bottom: 55%;
+  background: white;
+  padding: 2.25rem 0.6rem;
+}
+
+.carousel:hover .carousel-control-prev,
+.carousel:hover .carousel-control-next {
+  opacity: 1;
+  color: black;
+  transition: opacity 0.2s linear;
+}
+.carousel:hover .carousel-control-prev.disabled,
+.carousel:hover .carousel-control-next.disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.carousel-control-prev:focus,
+.carousel-control-next:focus {
+  opacity: 0;
+}
+
+.carousel-box h1, .carousel-box .h1,
+.carousel-box h2,
+.carousel-box .h2,
+.carousel-box h3,
+.carousel-box .h3,
+.carousel-box h4,
+.carousel-box .h4,
+.carousel-box h5,
+.carousel-box .h5,
+.carousel-box h6,
+.carousel-box .h6 {
+  letter-spacing: -1px;
+}
+
+.animated-fade {
+  display: block !important;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.2s, opacity 0.2s linear;
+}
+.animated-fade.show {
+  visibility: visible;
+  opacity: 1;
+}
+
 .image-cover {
   background-position: center;
   background-repeat: no-repeat;
@@ -10524,7 +10580,37 @@ textarea.form-control-lg {
   width: 100%;
 }
 
+.carousel-item a {
+  text-decoration: none;
+}
+
+.carousel-box {
+  background-color: #fefaf6;
+  padding: 2.5rem 1.25rem;
+}
+
 @media (min-width: 992px) {
+  .w-lg-25 {
+    width: 25% !important;
+  }
+
+  .carousel-overlay-container {
+    position: absolute;
+    right: 7%;
+    bottom: 10%;
+    left: 7%;
+    top: 10%;
+  }
+  .carousel-overlay-container > div {
+    display: flex;
+  }
+
+  .carousel-box {
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.92);
+    padding: 3.5rem 2.25rem;
+  }
+
   .sidepanel {
     display: none;
     height: auto;

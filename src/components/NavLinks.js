@@ -23,7 +23,7 @@ function NavLinks() {
         <span className="navbar-toggler-icon"></span>
       </button>
       <div
-        className={"collapse navbar-collapse bg-light " + panelClasses}
+        className={"collapse navbar-collapse bg-white " + panelClasses}
         id="navbarSupportedContent"
       >
         <ul className="navbar-nav me-auto mb-2 mb-lg-0 fw-bold text-uppercase  w-100 h-100">

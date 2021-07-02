@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { resolveHost } from "../utils/host";
 
-function Carousel({ height = 500, carouselName = "carousel" }) {
+function MultiCarousel({ height = 500, carouselName = "carousel", className }) {
   const style = { maxHeight: height };
 
   let [activeIndex, setActiveIndex] = useState(0);
@@ -11,50 +11,50 @@ function Carousel({ height = 500, carouselName = "carousel" }) {
     {
       id: 1,
       link: "/a",
-      caption: (
-        <div className=" justify-content-end align-items-center h-100">
-          <div className="text-center carousel-box ">
-            <h4 className="">BACK TO THE OFFICE</h4>
-            <p className=" m-0">50% off in selected items</p>
-          </div>
-        </div>
-      ),
+      title: "Soft Washed Crew-Neck Tee for Men",
+      price: "12.00",
       img: {
-        url: "/uploads/jumbotron_1_3afefa0344.jpg",
+        url: "https://www4.assets-gap.com/webcontent/0020/624/624/cn20624624.jpg",
         alt: "New Styles this season",
       },
     },
     {
       id: 2,
       link: "/b",
-      caption: (
-        <div className=" justify-content-start align-items-center h-100">
-          <div className="text-center carousel-box bg-light ">
-            <h4 className="text-uppercase">Summer Specials</h4>
-            <p className=" m-0">
-              Get moving this summer with our brand new styles
-            </p>
-          </div>
-        </div>
-      ),
+      title: "Soft Washed Crew-Neck Tee for Men",
+      price: "12.00",
       img: {
-        url: "/uploads/womens_summer_banner_3728b64513.jpg",
-        alt: "Summer 2021",
+        url: "https://www4.assets-gap.com/webcontent/0020/624/624/cn20624624.jpg",
+        alt: "New Styles this season",
       },
     },
     {
       id: 3,
       link: "/c",
-      caption: (
-        <div className=" justify-content-start  align-items-center h-100">
-          <div className="text-center carousel-box ">
-            <h4 className="text-uppercase">Sun. Light.</h4>
-            <p className=" m-0">50% off in selected items</p>
-          </div>
-        </div>
-      ),
+      title: "Soft Washed Crew-Neck Tee for Men",
+      price: "12.00",
       img: {
-        url: "/uploads/women_banner_02_7db5874bf8.jpg",
+        url: "https://www4.assets-gap.com/webcontent/0020/624/624/cn20624624.jpg",
+        alt: "New Styles this season",
+      },
+    },
+    {
+      id: 4,
+      link: "/c",
+      title: "Soft Washed Crew-Neck Tee for Men",
+      price: "12.00",
+      img: {
+        url: "https://www4.assets-gap.com/webcontent/0020/624/624/cn20624624.jpg",
+        alt: "New Styles this season",
+      },
+    },
+    {
+      id: 5,
+      link: "/c",
+      title: "Soft Washed Crew-Neck Tee for Men",
+      price: "12.00",
+      img: {
+        url: "https://www4.assets-gap.com/webcontent/0020/624/624/cn20624624.jpg",
         alt: "New Styles this season",
       },
     },
@@ -91,13 +91,13 @@ function Carousel({ height = 500, carouselName = "carousel" }) {
   return (
     <div
       id={carouselName}
-      className="carousel slide  p-0 mt-1"
+      className={"carousel slide  p-0 " + className}
       data-bs-ride="carousel"
       tabIndex={0}
       onKeyDown={handleKeyDown}
     >
-      <div className="carousel-inner" style={style}>
-        {slides.map(({ link, img, id, caption }, i) => {
+      <div className=" d-flex justify-content-between w-100" style={style}>
+        {slides.map(({ link, img, id, title, price }, i) => {
           return (
             <CarouselSlide
               key={id}
@@ -105,8 +105,8 @@ function Carousel({ height = 500, carouselName = "carousel" }) {
               activeIndex={activeIndex}
               link={link}
               img={img}
-              height={height}
-              caption={caption}
+              title={title}
+              price={price}
             />
           );
         })}
@@ -141,17 +141,18 @@ function Carousel({ height = 500, carouselName = "carousel" }) {
   );
 }
 
-function CarouselSlide({ i, activeIndex, link, img, height, caption }) {
+function CarouselSlide({ i, activeIndex, link, img, height, title, price }) {
   return (
     <div
+      style={{ width: "18%" }}
       className={
-        "carousel-item animated-fade " + (i === activeIndex ? "show" : "")
+        "multicarousel-slide " + (i === activeIndex ? "someclass" : "")
       }
     >
-      <Link tabIndex={-1} to={link}>
+      <Link className="text-decoration-none" tabIndex={-1} to={link}>
         <img
           src={resolveHost(img.url)}
-          className="d-block w-100 overflow-hidden"
+          className="img-fluid "
           alt={img.alt}
           style={{
             maxHeight: height,
@@ -159,19 +160,13 @@ function CarouselSlide({ i, activeIndex, link, img, height, caption }) {
             width: "100%",
           }}
         />
-        {caption && <div className="carousel-overlay-container">{caption}</div>}
+        <div>
+          <p className="small-title my-2">{title}</p>
+          <span className="text-muted">{price}</span>
+        </div>
       </Link>
     </div>
   );
 }
 
-export default Carousel;
-
-//  img.verticalOffset
-// ? {
-//     position: "absolute",
-//     top: img.verticalOffset,
-//     maxHeight: height,
-//     objectFit: "cover",
-//   }
-// :
+export default MultiCarousel;

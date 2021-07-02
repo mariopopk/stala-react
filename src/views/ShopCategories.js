@@ -1,6 +1,6 @@
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
-import Carousel from "../components/Carousel";
+import Carousel from "../components/MultiCarousel";
 import ImagesSnapshot from "../components/ImagesSnapshot";
 import Jumbotron from "../components/Jumbotron";
 
@@ -198,9 +198,8 @@ function ShopCategories() {
     <>
       <Jumbotron
         className="text-white"
-        title={`Shop for ${name}`}
-        image={image.url}
-        imagePosition={image.position}
+        title={<h1>{`Shop for ${name}`}</h1>}
+        image={{ url: image.url, position: image.position, opacity: "0.4" }}
         height={700}
         button={
           <Link
@@ -230,7 +229,7 @@ function ShopCategories() {
       </div>
 
       <h3 className="text-center my-5">Our Greatest Hits</h3>
-      <div className="d-flex flex-wrap container mt-5">
+      <div className=" container mt-5">
         <Carousel />
       </div>
     </>

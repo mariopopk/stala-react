@@ -6,7 +6,7 @@ import NavUtilities from "./NavUtilities";
 function NavBar() {
   return (
     <nav
-      className="navbar navbar-expand-lg navbar-light bg-light  w-100  border-bottom "
+      className="navbar navbar-expand-lg navbar-light bg-white sticky-top w-100 "
       style={{ zIndex: 10000 }}
     >
       <div className="container">
