@@ -2,9 +2,71 @@ import Carousel from "../components/Carousel";
 import Jumbotron from "../components/Jumbotron";
 import { Link } from "react-router-dom";
 import MultiCarousel from "../components/MultiCarousel";
-import TestingCarousel from "../components/Testing";
 
 function Home(props) {
+  const slides = [
+    {
+      id: 1,
+      link: "/a",
+      title: "Indigo Blue Stonewash Denim Belted Shirt Dress",
+      price: "12.00",
+      img: {
+        url: "https://images.pexels.com/photos/878358/pexels-photo-878358.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        alt: "New Styles this season",
+      },
+    },
+    {
+      id: 2,
+      link: "/b",
+      title: "Soft Washed Crew-Neck Tee for Men",
+      price: "12.00",
+      img: {
+        url: "https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        alt: "New Styles this season",
+      },
+    },
+    {
+      id: 3,
+      link: "/c",
+      title: "Soft Washed Crew-Neck Tee for Men",
+      price: "12.00",
+      img: {
+        url: "https://images.pexels.com/photos/1254502/pexels-photo-1254502.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        alt: "New Styles this season",
+      },
+    },
+    {
+      id: 4,
+      link: "/c",
+      title: "Soft Washed Crew-Neck Tee for Men",
+      price: "12.00",
+      img: {
+        url: "https://images.pexels.com/photos/775358/pexels-photo-775358.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        alt: "New Styles this season",
+      },
+    },
+    {
+      id: 5,
+      link: "/c",
+      title: "Soft Washed Crew-Neck Tee for Men",
+      price: "12.00",
+      img: {
+        url: "https://calvinklein.scene7.com/is/image/CalvinKlein/25097820_401_main?wid=432&hei=570&fmt=jpeg&qlt=90%2C0&op_sharpen=1&resMode=trilin&op_usm=0.8%2C1.0%2C6%2C0&iccEmbed=0",
+        alt: "New Styles this season",
+      },
+    },
+    {
+      id: 6,
+      link: "/c",
+      title: "Soft Washed Crew-Neck Tee for Men",
+      price: "12.00",
+      img: {
+        url: "https://www4.assets-gap.com/webcontent/0020/624/624/cn20624624.jpg",
+        alt: "New Styles this season",
+      },
+    },
+  ];
+
   return (
     <>
       <div className="container">
@@ -62,13 +124,13 @@ function Home(props) {
               button={
                 <>
                   <Link
-                    to={`/shop/men`}
+                    to={`/shop/boys`}
                     className="btn btn-outline-light   mx-2"
                   >
                     Shop Boys
                   </Link>
 
-                  <Link to={`/shop/men`} className="btn btn-outline-light  ">
+                  <Link to={`/shop/girls`} className="btn btn-outline-light  ">
                     Shop Girls
                   </Link>
                 </>
@@ -78,7 +140,7 @@ function Home(props) {
         </div>
         {/* What's new */}
         <h2 className="text-center my-5">Popular Items</h2>
-        <MultiCarousel className="my-5" />
+        <MultiCarousel className="my-5" slides={slides} />
         {/* <TestingCarousel /> */}
         {/* Shop Sale */}
       </div>

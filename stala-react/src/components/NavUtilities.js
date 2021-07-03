@@ -7,7 +7,10 @@ function NavUtilities() {
         <i className="bi bi-search"></i>
         <span className="visually-hidden">Search Products</span>
       </button>
-      <NavUser />
+
+      <div className="d-none d-md-block">
+        <NavUser />
+      </div>
 
       <button className="btn text-dark">
         <i className="bi bi-cart"></i>

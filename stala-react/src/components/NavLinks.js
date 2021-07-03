@@ -5,9 +5,19 @@ function NavLinks() {
   const [isOpen, setIsOpen] = useState(false);
 
   const panelClasses = isOpen ? " sidepanel " : "";
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <>
+      {isOpen && (
+        <div
+          onClick={handleClick}
+          className="bg-transparent w-100 h-100 position-fixed"
+          style={{ top: 0, bottom: 0, right: 0 }}
+        ></div>
+      )}
       <button
         className="navbar-toggler border-0"
         type="button"
@@ -16,9 +26,7 @@ function NavLinks() {
         aria-controls="navbarSupportedContent"
         aria-expanded="false"
         aria-label="Toggle navigation"
-        onClick={() => {
-          setIsOpen(!isOpen);
-        }}
+        onClick={handleClick}
       >
         <span className="navbar-toggler-icon"></span>
       </button>
