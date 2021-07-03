@@ -80,7 +80,7 @@ function ShopCategories() {
       id: 1,
       name: "Men",
       image: {
-        url: "/uploads/mens_main_af526ac1a0.jpg",
+        url: "/uploads/mens_4_fe606847b1.jpg",
         position: "50% 40%",
       },
 
@@ -90,42 +90,42 @@ function ShopCategories() {
           id: 11,
           name: "Tops",
           image: {
-            url: "/uploads/mens_tops_679aac2a8d.jpg",
+            url: "/uploads/mens_11_809000796b.jpg",
           },
         },
         {
           id: 12,
           name: "Shorts",
           image: {
-            url: "/uploads/mens_shorts_57e4ea4567.jpg",
+            url: "/uploads/mens_10_f12ad5a52c.jpg",
           },
         },
         {
           id: 13,
           name: "Jeans",
           image: {
-            url: "/uploads/mens_jeans_f8701e5eb3.jpg",
+            url: "/uploads/mens_2_1eee1265f1.jpg",
           },
         },
         {
           id: 14,
           name: "Sweatshirts",
           image: {
-            url: "/uploads/mens_sweatshirts_edb1a98842.jpg",
+            url: "/uploads/mens_16_4b33090f73.jpg",
           },
         },
         {
           id: 15,
           name: "Socks & Underwear",
           image: {
-            url: "/uploads/mens_underwear_039dffa730.jpg",
+            url: "/uploads/mens_8_609f9a24f2.jpg",
           },
         },
         {
           id: 16,
           name: "Pants",
           image: {
-            url: "/uploads/mens_pants_01cab4a9e6.jpg",
+            url: "/uploads/mens_13_9fce86b21d.jpg",
           },
         },
 
@@ -133,7 +133,7 @@ function ShopCategories() {
           id: 17,
           name: "Activewear",
           image: {
-            url: "/uploads/mens_activewear_5d5d043d1d.jpg",
+            url: "/uploads/mens_16_4b33090f73.jpg",
           },
         },
       ],
@@ -142,7 +142,7 @@ function ShopCategories() {
       id: 2,
       name: "Women",
       image: {
-        url: "/uploads/womens_main_7513bba8d9.jpg",
+        url: "/uploads/womens_10_c0af8e4089.jpg",
         position: "center 50%",
       },
       catchphrase: "New feeling. Discover the latest arrivals.",
@@ -230,7 +230,7 @@ function ShopCategories() {
               id: 2,
               name: "Shorts",
               image: {
-                url: "/uploads/mens_shorts_57e4ea4567.jpg",
+                url: "/uploads/mens_10_f12ad5a52c.jpg",
               },
             },
             {
@@ -251,7 +251,7 @@ function ShopCategories() {
               id: 5,
               name: "Socks & Underwear",
               image: {
-                url: "/uploads/mens_underwear_039dffa730.jpg",
+                url: "/uploads/mens_8_609f9a24f2.jpg",
               },
             },
             {
