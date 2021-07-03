@@ -36,8 +36,9 @@ function Home(props) {
               className="text-white mt-4"
               title={<h3 className="text-center">Men</h3>}
               image={{
-                url: "/uploads/Mens_small_edcd5f573b.jpg",
+                url: "/uploads/Mens_main_8974b4078a.jpg",
                 opacity: "0.3",
+                position: "50% 20%",
               }}
               button={
                 <Link to={`/shop/men`} className="btn btn-outline-light  ">
@@ -77,8 +78,8 @@ function Home(props) {
         </div>
         {/* What's new */}
         <h2 className="text-center my-5">Popular Items</h2>
-        {/* <MultiCarousel className="my-5" /> */}
-        <TestingCarousel />
+        <MultiCarousel className="my-5" />
+        {/* <TestingCarousel /> */}
         {/* Shop Sale */}
       </div>
     </>

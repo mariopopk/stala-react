@@ -2,17 +2,19 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { resolveHost } from "../utils/host";
 
-function TestingCarousel({ carouselName }) {
+function TestingCarousel({ carouselName, viewableSlides = 4, height = 450 }) {
+  const windowWidth = window.innerWidth;
+  if (windowWidth < 768) viewableSlides = 2;
+
   let [activeIndex, setActiveIndex] = useState(0);
-  const viewableSlides = 4;
   const slides = [
     {
       id: 1,
       link: "/a",
-      title: "Soft Washed Crew-Neck Tee for Men",
+      title: "Indigo Blue Stonewash Denim Belted Shirt Dress",
       price: "12.00",
       img: {
-        url: "https://www4.assets-gap.com/webcontent/0020/624/624/cn20624624.jpg",
+        url: "https://images.pexels.com/photos/878358/pexels-photo-878358.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
         alt: "New Styles this season",
       },
     },
@@ -22,7 +24,7 @@ function TestingCarousel({ carouselName }) {
       title: "Soft Washed Crew-Neck Tee for Men",
       price: "12.00",
       img: {
-        url: "https://www4.assets-gap.com/webcontent/0020/624/624/cn20624624.jpg",
+        url: "https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
         alt: "New Styles this season",
       },
     },
@@ -32,7 +34,7 @@ function TestingCarousel({ carouselName }) {
       title: "Soft Washed Crew-Neck Tee for Men",
       price: "12.00",
       img: {
-        url: "https://www4.assets-gap.com/webcontent/0020/624/624/cn20624624.jpg",
+        url: "https://images.pexels.com/photos/1254502/pexels-photo-1254502.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
         alt: "New Styles this season",
       },
     },
@@ -42,7 +44,7 @@ function TestingCarousel({ carouselName }) {
       title: "Soft Washed Crew-Neck Tee for Men",
       price: "12.00",
       img: {
-        url: "https://www4.assets-gap.com/webcontent/0020/624/624/cn20624624.jpg",
+        url: "https://images.pexels.com/photos/5610951/pexels-photo-5610951.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         alt: "New Styles this season",
       },
     },
@@ -52,7 +54,7 @@ function TestingCarousel({ carouselName }) {
       title: "Soft Washed Crew-Neck Tee for Men",
       price: "12.00",
       img: {
-        url: "https://www4.assets-gap.com/webcontent/0020/624/624/cn20624624.jpg",
+        url: "https://calvinklein.scene7.com/is/image/CalvinKlein/25097820_401_main?wid=432&hei=570&fmt=jpeg&qlt=90%2C0&op_sharpen=1&resMode=trilin&op_usm=0.8%2C1.0%2C6%2C0&iccEmbed=0",
         alt: "New Styles this season",
       },
     },
@@ -92,33 +94,29 @@ function TestingCarousel({ carouselName }) {
 
   function next() {
     if (canSlideRight) setActiveIndex(activeIndex + 1);
-    // else setActiveIndex(0);
   }
 
   function prev() {
     if (canSlideLeft) setActiveIndex(activeIndex - 1);
-    // else setActiveIndex(slides.length - 1);
   }
-
-  //   console.log("canSlideRight", canSlideRight);
 
   console.log(activeIndex);
   return (
-    <div className="carousel">
-      <div className="row overflow-hidden flex-nowrap">
+    <div className="carousel ">
+      <div className="row  flex-nowrap">
         {slides.map(({ id, link, title, price, img }, i) => {
           return (
-            <div key={id} className="col-lg-3 col-4">
-              <TestingSlide
-                viewableSlides={viewableSlides}
-                activeIndex={activeIndex}
-                link={link}
-                title={title}
-                price={price}
-                img={img}
-                i={i}
-              />
-            </div>
+            <TestingSlide
+              key={id}
+              viewableSlides={viewableSlides}
+              activeIndex={activeIndex}
+              link={link}
+              title={title}
+              price={price}
+              img={img}
+              i={i}
+              height={height}
+            />
           );
         })}
       </div>
@@ -160,27 +158,37 @@ function TestingSlide({
   i,
   activeIndex,
   viewableSlides,
+  height,
 }) {
   const lastSlideInRange = activeIndex + viewableSlides - 1;
   const isSlideViewable = i >= activeIndex && i <= lastSlideInRange;
 
-  console.log("IsSlideViewable", i, isSlideViewable);
+  function calcSlideWidth(isSlideViewable, viewableSlides) {
+    return isSlideViewable ? 100 / viewableSlides + "%" : 0;
+  }
 
   return (
-    <div className={"multicarousel-slide "}>
-      <Link className="text-decoration-none" tabIndex={-1} to={link}>
-        <img
-          src={resolveHost(img.url)}
-          className="img-fluid "
-          alt={img.alt}
-          style={{
-            objectFit: "cover",
-            width: "100%",
-          }}
-        />
-        <div>
-          <p className="small-title my-2">{title}</p>
-          <span className="text-muted">{price}</span>
+    <div
+      style={{ width: calcSlideWidth(isSlideViewable, viewableSlides) }}
+      className={"multicarousel-slide " + (isSlideViewable ? "show" : "")}
+    >
+      <Link className=" text-decoration-none" to={link}>
+        <div className="multicarousel-slide-container">
+          <img
+            src={resolveHost(img.url)}
+            alt={img.alt}
+            style={{
+              height: height,
+              objectFit: "cover",
+              width: "100%",
+            }}
+          />
+          <div className="">
+            <p className="small-title my-2 overflow-hidden text-nowrap text-truncate">
+              {title}
+            </p>
+            <span className="text-muted">{price}</span>
+          </div>
         </div>
       </Link>
     </div>

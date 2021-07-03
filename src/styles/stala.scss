@@ -78,8 +78,6 @@ $alert-height: 34px;
   }
 }
 
-// MultiCarousel
-
 // Jumbotron
 
 .image-cover {
@@ -131,6 +129,26 @@ $alert-height: 34px;
 .carousel-box {
   background-color: $light;
   padding: 2.5rem 1.25rem;
+}
+
+// MultiCarousel
+.multicarousel-slide {
+  visibility: hidden;
+  overflow: hidden;
+  width: 0;
+  margin: 0.75rem;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  transition: width 0.3s, opacity 0.5s linear;
+  &.show {
+    visibility: initial;
+    opacity: 1;
+
+    .multicarousel-slide-container {
+      padding: 0.75rem;
+    }
+  }
 }
 
 @include media-breakpoint-up(lg) {
