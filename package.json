@@ -4,8 +4,8 @@
   "description": "Full Stack Ecommerce Application",
   "main": "index.js",
   "scripts": {
-    "client-install": "cd ./stala-react/ && npm install --prefix client",
-    "client-build": "cd ./stala-react/ && npm run build --prefix client",
+    "client-install": "cd ./stala-react/ && npm install",
+    "client-build": "cd ./stala-react/ && npm run build",
     "start": "cd ./stala/ && npm start",    
     "server": "cd ./stala/ && npm run develop",    
     "client": "cd ./stala-react/ && npm start",    
