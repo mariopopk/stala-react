@@ -1,0 +1,83 @@
+@font-face {
+  font-family: "GT Walsheim Pro";
+  src: url("https://assets.ctfassets.net/qx1dg9syx02d/4Dc4toUiYTF0x6N9KrkvoM/6d63f8224488311101dde30881e9f361/GT-Walsheim-Pro-Light.eot");
+  src: url("https://assets.ctfassets.net/qx1dg9syx02d/2njs2KpH9J7ReTEyNRAUjl/2801b191aadfc59eb74eeb1d6001fcdf/GT-Walsheim-Pro-Light.woff")
+      format("woff"),
+    url("https://assets.ctfassets.net/qx1dg9syx02d/7B0jvO2rEELBkXhMy6TZpf/0db731d8efaf271ac99c182c54a67827/GT-Walsheim-Pro-Light.woff2")
+      format("woff2"),
+    url("https://assets.ctfassets.net/qx1dg9syx02d/4Dc4toUiYTF0x6N9KrkvoM/6d63f8224488311101dde30881e9f361/GT-Walsheim-Pro-Light.eot")
+      format("embedded-opentype");
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Libre Baskerville", serif;
+}
+
+$primary: #3a3a3a;
+$secondary: #8c6e43;
+$danger: #be1217;
+$success: #3e7957;
+$light: #fefaf6;
+
+$custom-colors: (
+  "tertiary": #bca279,
+);
+
+$enable-rounded: false;
+
+$font-family-sans-serif: "GT Walsheim Pro",
+  // Cross-platform generic font family (default user interface font)
+  system-ui,
+  // Safari for macOS and iOS (San Francisco)
+  -apple-system,
+  // Chrome < 56 for macOS (San Francisco)
+  BlinkMacSystemFont,
+  // Windows
+  "Segoe UI",
+  // Android
+  Roboto,
+  // Basic web fallback
+  "Helvetica Neue",
+  Arial,
+  // Linux
+  "Noto Sans",
+  "Liberation Sans",
+  // Sans serif fallback
+  sans-serif,
+  // Emoji fonts
+  "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+
+// Input
+$input-border-color: $primary;
+$input-placeholder-color: $primary;
+$input-bg: transparent;
+$input-border-width: 1px;
+$input-line-height: 1;
+
+// Carousel
+$carousel-control-color: $primary;
+$carousel-control-width: auto;
+
+// Tabs
+$nav-tabs-border-color: $primary;
+$nav-tabs-link-active-border-color: $primary $primary transparent;
+
+//Container
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1400px,
+);
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "./stala.scss";

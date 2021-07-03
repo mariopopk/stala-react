@@ -1,0 +1,4 @@
+1. Add Redux Provider to index.js
+2. Create Reducers under ./redux/
+3. Combine Reducers in root-reducer.js
+4. Create store.js

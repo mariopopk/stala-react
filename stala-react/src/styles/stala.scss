@@ -1,0 +1,184 @@
+@use "sass:map";
+// @use "sass:math";
+
+$navbar-height: 70px;
+$alert-height: 34px;
+
+// Nav
+
+.stala-logo {
+  letter-spacing: 2px;
+}
+
+.stala-nav-item {
+  letter-spacing: 2px;
+  margin-right: 1.2rem;
+}
+
+.accordion-content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+  &.show {
+    height: auto;
+    max-height: 999px;
+    transition: max-height 0.4s cubic-bezier(1, 0, 1, 0);
+  }
+}
+
+// Carousel
+.carousel:focus-visible,
+.carousel:focus-visible {
+  outline: -webkit-focus-ring-color solid 2px;
+  // box-shadow: 0 0 0 0.25rem rgb(58 58 58 / 25%);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  opacity: 0;
+  top: 45%;
+  bottom: 55%;
+  background: white;
+  padding: 2.25rem 0.6rem;
+}
+
+.carousel:hover .carousel-control-prev,
+.carousel:hover .carousel-control-next {
+  opacity: 1;
+  color: black;
+  transition: opacity 0.2s linear;
+  &.disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+}
+
+.carousel-control-prev:focus,
+.carousel-control-next:focus {
+  opacity: 0;
+}
+
+.carousel-box h1,
+.carousel-box h2,
+.carousel-box h3,
+.carousel-box h4,
+.carousel-box h5,
+.carousel-box h6 {
+  letter-spacing: -1px;
+}
+
+.animated-fade {
+  display: block !important;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.2s, opacity 0.2s linear;
+  &.show {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+// Jumbotron
+
+.image-cover {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.btn-lead {
+  min-width: 190px;
+}
+
+.navbar {
+  height: $navbar-height;
+}
+
+.small-title {
+  font-weight: 800;
+  line-height: 1.2;
+  font-size: 0.85rem;
+}
+
+.product-carousel {
+  .carousel-inner {
+    display: flex;
+
+    .carousel-item {
+      display: block;
+      margin-right: unset;
+    }
+  }
+}
+
+.sidepanel {
+  display: block !important;
+  height: calc(100vh - #{$navbar-height});
+  position: absolute;
+  padding: map.get($spacers, 3);
+  margin-top: $navbar-height;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.carousel-item {
+  a {
+    text-decoration: none;
+  }
+}
+.carousel-box {
+  background-color: $light;
+  padding: 2.5rem 1.25rem;
+}
+
+// MultiCarousel
+.multicarousel-slide {
+  visibility: hidden;
+  overflow: hidden;
+  width: 0;
+  margin: 0.75rem;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  transition: width 0.3s, opacity 0.5s linear;
+  &.show {
+    visibility: initial;
+    opacity: 1;
+
+    .multicarousel-slide-container {
+      padding: 0.75rem;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .w-lg-25 {
+    width: 25% !important;
+  }
+  .carousel-overlay-container {
+    position: absolute;
+    right: 7%;
+    bottom: 10%;
+    left: 7%;
+    top: 10%;
+    > div {
+      display: flex;
+    }
+  }
+
+  .carousel-box {
+    max-width: 400px;
+    background: hsla(0, 0%, 100%, 0.92);
+    padding: 3.5rem 2.25rem;
+  }
+
+  .sidepanel {
+    display: none;
+    height: auto;
+    background-color: transparent;
+    position: unset;
+    color: inherit;
+    padding: inherit;
+    margin-top: inherit;
+  }
+}
