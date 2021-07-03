@@ -20,7 +20,7 @@ function Carousel({ height = 500, carouselName = "carousel" }) {
         </div>
       ),
       img: {
-        url: "/uploads/jumbotron_1_3afefa0344.jpg",
+        url: "/uploads/mens_3_28fda3877e.jpg",
         alt: "New Styles this season",
       },
     },
@@ -38,7 +38,7 @@ function Carousel({ height = 500, carouselName = "carousel" }) {
         </div>
       ),
       img: {
-        url: "/uploads/womens_summer_banner_3728b64513.jpg",
+        url: "/uploads/womens_5_92d9ca6c43.jpg",
         alt: "Summer 2021",
       },
     },
@@ -54,7 +54,7 @@ function Carousel({ height = 500, carouselName = "carousel" }) {
         </div>
       ),
       img: {
-        url: "/uploads/women_banner_02_7db5874bf8.jpg",
+        url: "/uploads/womens_8_34a03d357d.jpg",
         alt: "New Styles this season",
       },
     },

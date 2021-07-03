@@ -80,7 +80,7 @@ function Home(props) {
               className="text-white mt-4"
               title={<h3 className="text-center">Women</h3>}
               image={{
-                url: "/uploads/womens_small_73404ea534.jpg",
+                url: "/uploads/womens_9_be7f945afd.jpg",
                 opacity: "0.3",
                 position: "50% 65%",
               }}
@@ -98,7 +98,7 @@ function Home(props) {
               className="text-white mt-4"
               title={<h3 className="text-center">Men</h3>}
               image={{
-                url: "/uploads/Mens_main_8974b4078a.jpg",
+                url: "/uploads/mens_5_b30641c3b7.jpg",
                 opacity: "0.3",
                 position: "50% 20%",
               }}
@@ -117,7 +117,7 @@ function Home(props) {
               className="text-white mt-4"
               title={<h3 className="text-center">Kids</h3>}
               image={{
-                url: "/uploads/kids_smal_7b1498330a.jpg",
+                url: "/uploads/kids_1_bb69496023.jpg",
                 opacity: "0.3",
                 position: "40% 20%",
               }}
