@@ -12,7 +12,7 @@
     "react-start": "cd ./stala-react/ && npm run start",    
     "dev": "concurrently \"npm run strapi-develop\" \"npm run react-start\"",
     "build": "concurrently \"npm run strapi-build\" \"npm run react-build\"",
-    "start": "concurrently \"npm run strapi-start\" \"npm run react-start\"",
+    "start": "concurrently \"npm run strapi-start\" \"npm run react-start\""
   },
   "author": "Mario Popoca",
   "license": "ISC",
