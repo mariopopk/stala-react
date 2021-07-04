@@ -9,6 +9,7 @@ function MultiCarousel({
   height = 450,
 }) {
   const windowWidth = window.innerWidth;
+
   if (windowWidth < 768) viewableSlides = 2;
 
   let [activeIndex, setActiveIndex] = useState(0);
