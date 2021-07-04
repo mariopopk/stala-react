@@ -8,7 +8,7 @@
     "strapi-start": "cd ./stala/ && npm run start",
     "strapi-build": "cd ./stala/ && npm run build",
     "strapi": "cd ./stala/ && npm run strapi",   
-    "react-build": "cd ./stala-react/ && npm run build",
+    "react-build": "cd ./stala-react/ && npm run react-scripts build",
     "react-start": "cd ./stala-react/ && npm start",    
     "dev": "concurrently \"npm run strapi-develop\" \"npm run react-start\"",
     "build": "concurrently \"npm run strapi-build\" \"npm run react-build\"",
