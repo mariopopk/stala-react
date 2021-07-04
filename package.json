@@ -13,7 +13,7 @@
     "dev": "concurrently \"npm run strapi-develop\" \"npm run react-start\"",
     "build": "concurrently \"npm run strapi-build\" \"npm run react-build\"",
     "start": "npm run react-start",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && npm run react-build" 
+    "heroku-postbuild": "heroku config:set NPM_CONFIG_PRODUCTION=false && npm run react-build" 
   },
   "author": "Mario Popoca",
   "license": "ISC",
