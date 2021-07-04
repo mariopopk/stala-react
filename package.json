@@ -4,13 +4,14 @@
   "description": "Full Stack Ecommerce Application",
   "main": "index.js",
   "scripts": {
-    "client-install": "cd ./stala-react/ && npm install",
-    "client-build": "cd ./stala-react/ && npm run build",
-    "start": "cd ./stala/ && npm start",    
+    "client-install": "cd ./stala-react/ && npm install --prefix client",
+    "client-build": "cd ./stala-react/ && npm run build --prefix client",
+    "server-build": "cd ./stala/ && NODE_ENV=production npm run build",
+    "start": "cd ./stala/ && npm start && cd ./stala-react/ && npm start ",    
     "server": "cd ./stala/ && npm run develop",    
     "client": "cd ./stala-react/ && npm start",    
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run client-install && npm run client-build" 
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run client-install && npm run client-build && run server-build" 
   },
   "author": "Mario Popoca",
   "license": "ISC",
