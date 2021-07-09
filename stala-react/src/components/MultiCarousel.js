@@ -10,7 +10,10 @@ function MultiCarousel({
 }) {
   const windowWidth = window.innerWidth;
 
-  if (windowWidth < 768) viewableSlides = 2;
+  if (windowWidth < 768) {
+    viewableSlides = 2;
+    height = 300;
+  }
 
   let [activeIndex, setActiveIndex] = useState(0);
 
@@ -21,17 +24,17 @@ function MultiCarousel({
       prev();
     }
   };
-  const handleKeyDown = (event) => {
-    event.target.parentElement.focus();
-    console.log(event.key);
-    if (event.key === "ArrowRight") {
-      next();
-    } else if (event.key === "ArrowLeft") {
-      prev();
-    } else if (event.key === "Enter") {
-      event.target.parentElement.querySelector(".show a").click();
-    }
-  };
+  // const handleKeyDown = (event) => {
+  //   event.target.parentElement.focus();
+  //   console.log(event.key);
+  //   if (event.key === "ArrowRight") {
+  //     next();
+  //   } else if (event.key === "ArrowLeft") {
+  //     prev();
+  //   } else if (event.key === "Enter") {
+  //     event.target.parentElement.querySelector(".show a").click();
+  //   }
+  // };
 
   const canSlideLeft = activeIndex > 0;
   const canSlideRight = activeIndex < slides.length - viewableSlides;
@@ -44,7 +47,6 @@ function MultiCarousel({
     if (canSlideLeft) setActiveIndex(activeIndex - 1);
   }
 
-  console.log(activeIndex);
   if (!slides || !slides.length)
     return <div className="alert alert-secondary">Nothing to show</div>;
   else

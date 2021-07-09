@@ -8,60 +8,60 @@ function Home(props) {
     {
       id: 1,
       link: "/a",
-      title: "Indigo Blue Stonewash Denim Belted Shirt Dress",
-      price: "12.00",
+      title: "Logo Crewneck T-Shirt",
+      price: "15.00",
       img: {
-        url: "https://images.pexels.com/photos/878358/pexels-photo-878358.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        url: "https://calvinklein.scene7.com/is/image/CalvinKlein/21870249_417_main?wid=563&hei=739&fmt=jpeg&qlt=85%2C0&resMode=sharp2&op_usm=0.9%2C1.0%2C8%2C0&iccEmbed=0",
         alt: "New Styles this season",
       },
     },
     {
       id: 2,
       link: "/b",
-      title: "Soft Washed Crew-Neck Tee for Men",
-      price: "12.00",
+      title: "Striped Polo Shirt",
+      price: "25.00",
       img: {
-        url: "https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        url: "https://calvinklein.scene7.com/is/image/CalvinKlein/21806436_440_main?wid=856&hei=1127&fmt=jpeg&qlt=85%2C0&resMode=sharp2&op_usm=0.9%2C1.0%2C8%2C0&iccEmbed=0",
         alt: "New Styles this season",
       },
     },
     {
       id: 3,
       link: "/c",
-      title: "Soft Washed Crew-Neck Tee for Men",
-      price: "12.00",
+      title: "Brilliant Crystal Necklace",
+      price: "60.00",
       img: {
-        url: "https://images.pexels.com/photos/1254502/pexels-photo-1254502.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        url: "https://calvinklein.scene7.com/is/image/CalvinKlein/43018450_000_alternate1?wid=563&hei=739&fmt=jpeg&qlt=85%2C0&resMode=sharp2&op_usm=0.9%2C1.0%2C8%2C0&iccEmbed=0",
         alt: "New Styles this season",
       },
     },
     {
       id: 4,
       link: "/c",
-      title: "Soft Washed Crew-Neck Tee for Men",
-      price: "12.00",
+      title: "V-Neck Short Sleeve Dress",
+      price: "45.00",
       img: {
-        url: "https://images.pexels.com/photos/775358/pexels-photo-775358.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        url: "https://calvinklein.scene7.com/is/image/CalvinKlein/18482296_010_main?wid=856&hei=1127&fmt=jpeg&qlt=85%2C0&resMode=sharp2&op_usm=0.9%2C1.0%2C8%2C0&iccEmbed=0",
         alt: "New Styles this season",
       },
     },
     {
       id: 5,
       link: "/c",
-      title: "Soft Washed Crew-Neck Tee for Men",
+      title: "Tank Dress",
       price: "12.00",
       img: {
-        url: "https://calvinklein.scene7.com/is/image/CalvinKlein/25097820_401_main?wid=432&hei=570&fmt=jpeg&qlt=90%2C0&op_sharpen=1&resMode=trilin&op_usm=0.8%2C1.0%2C6%2C0&iccEmbed=0",
+        url: "https://calvinklein.scene7.com/is/image/CalvinKlein/18009036_020_main?wid=856&hei=1127&fmt=jpeg&qlt=85%2C0&resMode=sharp2&op_usm=0.9%2C1.0%2C8%2C0&iccEmbed=0",
         alt: "New Styles this season",
       },
     },
     {
       id: 6,
       link: "/c",
-      title: "Soft Washed Crew-Neck Tee for Men",
+      title: "Slim Fit Dark Jeans",
       price: "12.00",
       img: {
-        url: "https://www4.assets-gap.com/webcontent/0020/624/624/cn20624624.jpg",
+        url: "https://calvinklein.scene7.com/is/image/CalvinKlein/25509890_890_main?wid=856&hei=1127&fmt=jpeg&qlt=85%2C0&resMode=sharp2&op_usm=0.9%2C1.0%2C8%2C0&iccEmbed=0",
         alt: "New Styles this season",
       },
     },
@@ -80,12 +80,15 @@ function Home(props) {
               className="text-white mt-4"
               title={<h3 className="text-center">Women</h3>}
               image={{
-                url: "/uploads/womens_9_be7f945afd.jpg",
+                url: "https://deathtostock.imgix.net/000/003/078/original/DTS_Sunny_Premium_4.jpg?w=1083&h=722&fit=clip&dpr=1&auto=compress&q=75&ixlib=js-2.3.1&s=03928d867df308b94abba74d31da1a70",
                 opacity: "0.3",
                 position: "50% 65%",
               }}
               button={
-                <Link to={`/shop/women`} className="btn btn-outline-light  ">
+                <Link
+                  to={`/shop/women`}
+                  className="btn btn-outline-light btn-lg "
+                >
                   Shop All
                 </Link>
               }
@@ -98,12 +101,15 @@ function Home(props) {
               className="text-white mt-4"
               title={<h3 className="text-center">Men</h3>}
               image={{
-                url: "/uploads/mens_5_b30641c3b7.jpg",
+                url: "https://deathtostock.imgix.net/000/003/080/original/DTS_Sunny_Premium_6.jpg?w=1083&h=722&fit=clip&dpr=1&auto=compress&q=75&ixlib=js-2.3.1&s=35f5d7b043dbf13f0ce0c652dcb13c1a",
                 opacity: "0.3",
                 position: "50% 20%",
               }}
               button={
-                <Link to={`/shop/men`} className="btn btn-outline-light  ">
+                <Link
+                  to={`/shop/men`}
+                  className="btn btn-outline-light btn-lg "
+                >
                   Shop All
                 </Link>
               }
@@ -117,20 +123,23 @@ function Home(props) {
               className="text-white mt-4"
               title={<h3 className="text-center">Kids</h3>}
               image={{
-                url: "/uploads/kids_1_bb69496023.jpg",
+                url: "https://deathtostock.imgix.net/000/003/586/original/RCC_-_DTS_HOME_5.jpg?w=1083&h=722&fit=clip&dpr=1&auto=compress&q=75&ixlib=js-2.3.1&s=5f00d8c44f2c9eb2742d9aa75e119ea3",
                 opacity: "0.3",
-                position: "40% 20%",
+                position: "50% 50%",
               }}
               button={
                 <>
                   <Link
                     to={`/shop/boys`}
-                    className="btn btn-outline-light   mx-2"
+                    className="btn btn-outline-light btn-lg  mx-2"
                   >
                     Shop Boys
                   </Link>
 
-                  <Link to={`/shop/girls`} className="btn btn-outline-light  ">
+                  <Link
+                    to={`/shop/girls`}
+                    className="btn btn-outline-light btn-lg "
+                  >
                     Shop Girls
                   </Link>
                 </>

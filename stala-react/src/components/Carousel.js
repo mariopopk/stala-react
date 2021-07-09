@@ -12,15 +12,15 @@ function Carousel({ height = 500, carouselName = "carousel" }) {
       id: 1,
       link: "/a",
       caption: (
-        <div className=" justify-content-end align-items-center h-100">
+        <div className=" justify-content-start align-items-center h-100">
           <div className="text-center carousel-box ">
-            <h4 className="">BACK TO THE OFFICE</h4>
+            <h4 className="">IT'S SUMMER TIME</h4>
             <p className=" m-0">50% off in selected items</p>
           </div>
         </div>
       ),
       img: {
-        url: "/uploads/mens_3_28fda3877e.jpg",
+        url: "https://deathtostock.imgix.net/000/003/691/original/5.jpg?w=1083&h=722&fit=clip&dpr=1&auto=compress&q=75&ixlib=js-2.3.1&s=9b44c7bb012d420ba548cc2d9c0a178b",
         alt: "New Styles this season",
       },
     },

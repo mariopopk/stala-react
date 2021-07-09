@@ -1,10 +1,6 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
-@font-face {
-  font-family: "GT Walsheim Pro";
-  src: url("https://assets.ctfassets.net/qx1dg9syx02d/4Dc4toUiYTF0x6N9KrkvoM/6d63f8224488311101dde30881e9f361/GT-Walsheim-Pro-Light.eot");
-  src: url("https://assets.ctfassets.net/qx1dg9syx02d/2njs2KpH9J7ReTEyNRAUjl/2801b191aadfc59eb74eeb1d6001fcdf/GT-Walsheim-Pro-Light.woff") format("woff"), url("https://assets.ctfassets.net/qx1dg9syx02d/7B0jvO2rEELBkXhMy6TZpf/0db731d8efaf271ac99c182c54a67827/GT-Walsheim-Pro-Light.woff2") format("woff2"), url("https://assets.ctfassets.net/qx1dg9syx02d/4Dc4toUiYTF0x6N9KrkvoM/6d63f8224488311101dde30881e9f361/GT-Walsheim-Pro-Light.eot") format("embedded-opentype");
-}
 h1, .h1,
 h2,
 .h2,
@@ -47,7 +43,7 @@ h6,
   --bs-danger: #be1217;
   --bs-light: #fefaf6;
   --bs-dark: #212529;
-  --bs-font-sans-serif: "GT Walsheim Pro", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-sans-serif: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
 }
@@ -10465,7 +10461,8 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.stala-logo {
+.stala-logo,
+.letter-spacing-2 {
   letter-spacing: 2px;
 }
 
@@ -10477,12 +10474,14 @@ textarea.form-control-lg {
 .accordion-content {
   overflow: hidden;
   max-height: 0;
-  transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+  visibility: hidden;
+  transition: 0.4s cubic-bezier(0, 1, 0, 1);
 }
 .accordion-content.show {
   height: auto;
   max-height: 999px;
-  transition: max-height 0.4s cubic-bezier(1, 0, 1, 0);
+  transition: 0.5s cubic-bezier(1, 0, 1, 0);
+  visibility: visible;
 }
 
 .carousel:focus-visible,
@@ -10569,7 +10568,48 @@ textarea.form-control-lg {
   margin-right: unset;
 }
 
-.sidepanel {
+.carousel-item a {
+  text-decoration: none;
+}
+
+.carousel-box {
+  background-color: #fefaf6;
+  padding: 2.5rem 1.25rem;
+}
+
+.backdrop {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  opacity: 0;
+  transition: 0.2s;
+  visibility: hidden;
+}
+.backdrop.show {
+  opacity: 0.8;
+  visibility: visible;
+}
+
+.sidemenu {
+  max-width: 0px;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1000;
+  transition: 0.3s;
+  transition-delay: 0.2s;
+  visibility: hidden;
+}
+.sidemenu.show {
+  max-width: 500px;
+  visibility: visible;
+}
+
+.sidemenu-nav {
   display: block !important;
   height: calc(100vh - 70px);
   position: absolute;
@@ -10578,15 +10618,7 @@ textarea.form-control-lg {
   top: 0;
   left: 0;
   width: 100%;
-}
-
-.carousel-item a {
-  text-decoration: none;
-}
-
-.carousel-box {
-  background-color: #fefaf6;
-  padding: 2.5rem 1.25rem;
+  max-width: 100%;
 }
 
 .multicarousel-slide {
@@ -10629,7 +10661,7 @@ textarea.form-control-lg {
     padding: 3.5rem 2.25rem;
   }
 
-  .sidepanel {
+  .sidemenu-nav {
     display: none;
     height: auto;
     background-color: transparent;

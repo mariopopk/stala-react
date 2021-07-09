@@ -1,13 +1,15 @@
-@font-face {
-  font-family: "GT Walsheim Pro";
-  src: url("https://assets.ctfassets.net/qx1dg9syx02d/4Dc4toUiYTF0x6N9KrkvoM/6d63f8224488311101dde30881e9f361/GT-Walsheim-Pro-Light.eot");
-  src: url("https://assets.ctfassets.net/qx1dg9syx02d/2njs2KpH9J7ReTEyNRAUjl/2801b191aadfc59eb74eeb1d6001fcdf/GT-Walsheim-Pro-Light.woff")
-      format("woff"),
-    url("https://assets.ctfassets.net/qx1dg9syx02d/7B0jvO2rEELBkXhMy6TZpf/0db731d8efaf271ac99c182c54a67827/GT-Walsheim-Pro-Light.woff2")
-      format("woff2"),
-    url("https://assets.ctfassets.net/qx1dg9syx02d/4Dc4toUiYTF0x6N9KrkvoM/6d63f8224488311101dde30881e9f361/GT-Walsheim-Pro-Light.eot")
-      format("embedded-opentype");
-}
+// @font-face {
+//   font-family: "Open Sans";
+//   src: url("https://assets.ctfassets.net/qx1dg9syx02d/4Dc4toUiYTF0x6N9KrkvoM/6d63f8224488311101dde30881e9f361/GT-Walsheim-Pro-Light.eot");
+//   src: url("https://assets.ctfassets.net/qx1dg9syx02d/2njs2KpH9J7ReTEyNRAUjl/2801b191aadfc59eb74eeb1d6001fcdf/GT-Walsheim-Pro-Light.woff")
+//       format("woff"),
+//     url("https://assets.ctfassets.net/qx1dg9syx02d/7B0jvO2rEELBkXhMy6TZpf/0db731d8efaf271ac99c182c54a67827/GT-Walsheim-Pro-Light.woff2")
+//       format("woff2"),
+//     url("https://assets.ctfassets.net/qx1dg9syx02d/4Dc4toUiYTF0x6N9KrkvoM/6d63f8224488311101dde30881e9f361/GT-Walsheim-Pro-Light.eot")
+//       format("embedded-opentype");
+// }
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
 
@@ -32,7 +34,7 @@ $custom-colors: (
 
 $enable-rounded: false;
 
-$font-family-sans-serif: "GT Walsheim Pro",
+$font-family-sans-serif: "Open Sans",
   // Cross-platform generic font family (default user interface font)
   system-ui,
   // Safari for macOS and iOS (San Francisco)

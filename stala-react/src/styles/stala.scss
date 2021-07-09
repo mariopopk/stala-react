@@ -6,7 +6,8 @@ $alert-height: 34px;
 
 // Nav
 
-.stala-logo {
+.stala-logo,
+.letter-spacing-2 {
   letter-spacing: 2px;
 }
 
@@ -18,11 +19,13 @@ $alert-height: 34px;
 .accordion-content {
   overflow: hidden;
   max-height: 0;
-  transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+  visibility: hidden;
+  transition: 0.4s cubic-bezier(0, 1, 0, 1);
   &.show {
     height: auto;
     max-height: 999px;
-    transition: max-height 0.4s cubic-bezier(1, 0, 1, 0);
+    transition: 0.5s cubic-bezier(1, 0, 1, 0);
+    visibility: visible;
   }
 }
 
@@ -111,16 +114,6 @@ $alert-height: 34px;
   }
 }
 
-.sidepanel {
-  display: block !important;
-  height: calc(100vh - #{$navbar-height});
-  position: absolute;
-  padding: map.get($spacers, 3);
-  margin-top: $navbar-height;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
 .carousel-item {
   a {
     text-decoration: none;
@@ -129,6 +122,52 @@ $alert-height: 34px;
 .carousel-box {
   background-color: $light;
   padding: 2.5rem 1.25rem;
+}
+
+// SideMenu
+
+.backdrop {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  opacity: 0;
+  transition: 0.2s;
+  visibility: hidden;
+  &.show {
+    opacity: 0.8;
+    visibility: visible;
+  }
+}
+
+.sidemenu {
+  max-width: 0px;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1000;
+  transition: 0.3s;
+  transition-delay: 0.2s;
+  visibility: hidden;
+  &.show {
+    max-width: 500px;
+    visibility: visible;
+  }
+}
+
+.sidemenu-nav {
+  display: block !important;
+  height: calc(100vh - #{$navbar-height});
+  position: absolute;
+  padding: map.get($spacers, 3);
+  margin-top: $navbar-height;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
 }
 
 // MultiCarousel
@@ -172,7 +211,7 @@ $alert-height: 34px;
     padding: 3.5rem 2.25rem;
   }
 
-  .sidepanel {
+  .sidemenu-nav {
     display: none;
     height: auto;
     background-color: transparent;

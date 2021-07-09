@@ -1,9 +1,9 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { Link } from "react-router-dom";
 import { resolveHost } from "../utils/host";
 
 function ImagesSnapshot({ title, href, image }) {
-  const [fallBackImg, setFallBackImg] = useState();
+  // const [fallBackImg, setFallBackImg] = useState();
   return (
     <div className="m-2">
       <Link to={href}>
@@ -11,11 +11,11 @@ function ImagesSnapshot({ title, href, image }) {
           <img
             src={resolveHost(image)}
             alt=""
-            onError={(e) => {
-              console.log("error", e);
-            }}
+            // onError={(e) => {
+            //   console.log("error", e);
+            // }}
             style={{
-              height: 400,
+              height: 500,
               width: "100%",
               objectFit: "cover",
             }}

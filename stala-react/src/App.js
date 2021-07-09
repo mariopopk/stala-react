@@ -5,7 +5,7 @@ import Page from "./views/Page";
 import Shop from "./views/Shop";
 import NavBar from "./components/NavBar";
 import Alert from "./components/Alert";
-import ShopCategories from "./views/ShopCategories";
+import Department from "./views/Department";
 import Footer from "./components/Footer";
 import { connect } from "react-redux";
 import LoginAndSignUp from "./views/LoginAndSignUp";
@@ -15,17 +15,17 @@ function App({ currentUser }) {
   return (
     <div className="">
       <Alert>
-        30% off online only <span className="mx-2">|</span> Free shipping on 2+
-        Items <span className="mx-2">|</span> Extra 40% off sale
+        Free shipping on 2+ Items <span className="mx-2">|</span> Extra 20% off
+        sale
       </Alert>
       <NavBar />
       <Switch>
         <Route exact path="/" children={<Home />} />
-        <Route exact path="/shop/:category" children={<Shop />} />
+        <Route exact path="/shop/:department" children={<Shop />} />
         <Route
           exact
-          path="/shop/:category/categories"
-          children={<ShopCategories />}
+          path="/shop/:department/categories"
+          children={<Department />}
         />
         <Route path="/site/:slug" children={<Page />} />
 

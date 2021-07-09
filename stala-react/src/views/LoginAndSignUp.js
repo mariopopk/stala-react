@@ -29,10 +29,14 @@ function LoginAndSignUp({ currentUser, setCurrentUser }) {
   return (
     <>
       <Jumbotron
-        title="Stala"
-        className="text-white bg-primary"
-        image="/uploads/stala_store_0fba6dece9.jpg"
         height={300}
+        className="text-white"
+        title={<h1 className="text-center">Stala</h1>}
+        image={{
+          url: "/uploads/store_6901d7dacd.jpg",
+          opacity: "0.3",
+          position: "50% 50%",
+        }}
       />
       <div className="container">
         <div className="my-5 mx-auto " style={{ maxWidth: 600 }}>

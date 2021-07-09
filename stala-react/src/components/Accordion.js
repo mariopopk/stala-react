@@ -1,24 +1,6 @@
 import { useState } from "react";
 
-function Accordion({ accordionName }) {
-  const items = [
-    {
-      title: "Department",
-      key: 1,
-      body: <div>Something</div>,
-    },
-    {
-      title: "Category",
-      key: 2,
-      body: <div>Something</div>,
-    },
-    {
-      title: "Price",
-      key: 3,
-      body: <div>Something</div>,
-    },
-  ];
-
+function Accordion({ accordionName, items }) {
   const [activeAccordionIndex, setActiveAccordionIndex] = useState(-1);
 
   return (
@@ -34,6 +16,7 @@ function Accordion({ accordionName }) {
             isOpen={isOpen}
             i={i}
             setActiveAccordionIndex={setActiveAccordionIndex}
+            accordionName={accordionName}
           />
         );
       })}
