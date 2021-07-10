@@ -3,15 +3,8 @@
 function Checkbox({ children: name, id, isSelected = false, callback }) {
   return (
     <div className="form-check">
-      <input
-        className="form-check-input"
-        type="checkbox"
-        value={name}
-        defaultChecked={isSelected}
-        selected={isSelected}
-        id={id}
-        onChange={callback}
-      />
+      <i class="bi bi-check2-circle"></i>
+
       <label className="form-check-label" htmlFor={id}>
         {name}
       </label>

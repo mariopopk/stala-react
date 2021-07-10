@@ -1,32 +1,44 @@
 import { categories as dbCategories } from "../utils/data";
 import { getDepartmentBySlug } from "../utils/helpers";
 import { NavLink } from "react-router-dom";
+import { processQuery, lookUpQueryValue } from "../utils/queryStrings";
 
-function CategoryOptions({ location, department, categories }) {
+function CategoryOptions({ location, department }) {
   const activeDepartment = getDepartmentBySlug(
     department,
     dbCategories.subcategories
   );
 
-  categories = categories && categories.split(",");
+  const queryStr = location.search;
 
   return (
     <>
       <ul className="list-unstyled">
         {activeDepartment.subcategories.map(({ id, name: category }) => {
-          const link = "/shop/boys/?categories=sale,shorts,jeans";
+          const query = processQuery(queryStr, "categories", id.toString());
+
+          const isActiveFilter = lookUpQueryValue(
+            queryStr,
+            "categories",
+            id.toString()
+          );
+
           return (
             <li key={id}>
               <NavLink
                 isActive={() => {
-                  const isActiveFilter =
-                    categories && categories.includes(category.toLowerCase());
                   return isActiveFilter;
                 }}
-                className="text-decoration-none"
+                className="text-decoration-none checkbox-item"
                 activeClassName="fw-bold"
-                to={link}
+                to={`/shop/${department}?${query}`}
               >
+                {isActiveFilter ? (
+                  <i className="bi bi-check-circle-fill mx-2"></i>
+                ) : (
+                  <i className="bi bi-circle mx-2"></i>
+                )}
+
                 {category}
               </NavLink>
             </li>

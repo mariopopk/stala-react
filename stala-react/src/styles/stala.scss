@@ -4,6 +4,15 @@
 $navbar-height: 70px;
 $alert-height: 34px;
 
+// Checkbox look-alikes
+.checkbox-item {
+  margin-left: 1.5rem;
+}
+
+.checkbox-item:before {
+  content: "";
+}
+
 // Nav
 
 .stala-logo,

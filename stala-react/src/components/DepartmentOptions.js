@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { categories as dbCategories } from "../utils/data";
 import { getDepartments } from "../utils/helpers";
 
-function DepartmentOptions({ queryString = "" }) {
+function DepartmentOptions() {
   const departments = getDepartments(dbCategories.subcategories);
   return (
     <>
@@ -12,9 +12,9 @@ function DepartmentOptions({ queryString = "" }) {
           return (
             <li key={id}>
               <NavLink
-                activeClassName="fw-bold"
                 className="text-decoration-none text-capitalize"
-                to={`/shop/${department}${queryString}`}
+                activeClassName="fw-bold"
+                to={`/shop/${department}`}
               >
                 {department}
               </NavLink>

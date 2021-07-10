@@ -274,10 +274,10 @@ function Department() {
         height={700}
         button={
           <Link
-            to={`/shop/${department}?categories=sale`}
-            className="btn btn-outline-light btn-lead btn-lg text-uppercase"
+            to={`/shop/${department}`}
+            className="btn btn-outline-light btn-lead btn-lg "
           >
-            Shop Sale
+            Shop All
           </Link>
         }
         content={catchphrase}
@@ -290,7 +290,7 @@ function Department() {
           return (
             <div key={id} className="col-6 col-md-3">
               <ImagesSnapshot
-                href={`/shop/${department}?categories=${name}`}
+                href={`/shop/${department}?categories=${id}`}
                 image={image.url}
                 title={name}
               />

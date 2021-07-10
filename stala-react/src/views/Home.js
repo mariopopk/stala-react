@@ -86,7 +86,7 @@ function Home(props) {
               }}
               button={
                 <Link
-                  to={`/shop/women`}
+                  to={`/shop/women/categories`}
                   className="btn btn-outline-light btn-lg "
                 >
                   Shop All
@@ -107,7 +107,7 @@ function Home(props) {
               }}
               button={
                 <Link
-                  to={`/shop/men`}
+                  to={`/shop/men/categories`}
                   className="btn btn-outline-light btn-lg "
                 >
                   Shop All
@@ -130,14 +130,14 @@ function Home(props) {
               button={
                 <>
                   <Link
-                    to={`/shop/boys`}
+                    to={`/shop/boys/categories`}
                     className="btn btn-outline-light btn-lg  mx-2"
                   >
                     Shop Boys
                   </Link>
 
                   <Link
-                    to={`/shop/girls`}
+                    to={`/shop/girls/categories`}
                     className="btn btn-outline-light btn-lg "
                   >
                     Shop Girls

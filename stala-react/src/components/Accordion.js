@@ -56,7 +56,7 @@ function AccordionItem({
         aria-labelledby={`${accordionName}-header-${i}`}
         data-bs-parent={`#${accordionName}`}
       >
-        <div className="accordion-body">{body}</div>
+        <div className="accordion-body px-1 py-2">{body}</div>
       </div>
     </div>
   );

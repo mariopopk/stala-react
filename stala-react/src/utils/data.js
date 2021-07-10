@@ -316,9 +316,9 @@ export const categories = {
   ],
 };
 
-const products = [
-  {
-    id: 1,
-    name: "",
-  },
-];
+// const products = [
+//   {
+//     id: 1,
+//     name: "",
+//   },
+// ];

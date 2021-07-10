@@ -1,6 +1,6 @@
 import { useParams } from "react-router";
 // import ProductCard from "../components/ProductCard";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 // import Accordion from "../components/Accordion";
 // import DepartmentOptions from "../components/DepartmentOption";
 import queryString from "query-string";
@@ -20,13 +20,13 @@ function Shop() {
 
   return (
     <>
-      <div className="container">
+      <div className="container-md">
         <h2 className="text-capitalize  text-center my-4">{department}</h2>
-        <div className="d-flex flex-wrap container">
-          <div className="col-12 col-lg-2 ">
+        <div className="d-flex flex-wrap ">
+          <div className="col-12 col-md-4 col-lg-3 col-xl-2">
             <div className="sticky-top">
               <ShoppingFilters
-                categories={categories}
+                // categories={categories}
                 colors={colors}
                 priceRange={priceRange}
                 sizes={sizes}
@@ -35,7 +35,7 @@ function Shop() {
               />
             </div>
           </div>
-          <div className="col-12 col-lg-10">
+          <div className="col-12 col-md-8 col-lg-9 col-xl-10">
             <div className="d-flex flex-wrap container">
               <ShoppingGrid />
             </div>
