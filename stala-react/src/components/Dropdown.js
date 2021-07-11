@@ -18,7 +18,7 @@ function Dropdown({ dropdownId, title, children }) {
       >
         <div className="dropdown">
           <button
-            className="btn text-dark "
+            className="btn text-dark btn-responsive"
             type="button"
             id={dropdownId}
             data-bs-toggle="dropdown"

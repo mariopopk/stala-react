@@ -40,12 +40,13 @@ export function processQuery(queryStr, key, value) {
   }
 }
 
+// Checks whether value exists in the query
 export function lookUpQueryValue(queryStr, key, value) {
   const queryObj = queryString.parse(queryStr);
   const filter = queryObj[key];
 
   // If filter does not exist, return nothing
-  if (!filter) return;
+  if (!filter) return null;
   const values = filter.split(",");
   return values.includes(value);
 }

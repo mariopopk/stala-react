@@ -3,7 +3,7 @@ import Jumbotron from "../components/Jumbotron";
 import { Link } from "react-router-dom";
 import MultiCarousel from "../components/MultiCarousel";
 
-function Home(props) {
+function Home() {
   const slides = [
     {
       id: 1,
@@ -82,7 +82,7 @@ function Home(props) {
               image={{
                 url: "https://deathtostock.imgix.net/000/003/078/original/DTS_Sunny_Premium_4.jpg?w=1083&h=722&fit=clip&dpr=1&auto=compress&q=75&ixlib=js-2.3.1&s=03928d867df308b94abba74d31da1a70",
                 opacity: "0.3",
-                position: "50% 65%",
+                position: "70% 65%",
               }}
               button={
                 <Link
@@ -103,7 +103,7 @@ function Home(props) {
               image={{
                 url: "https://deathtostock.imgix.net/000/003/080/original/DTS_Sunny_Premium_6.jpg?w=1083&h=722&fit=clip&dpr=1&auto=compress&q=75&ixlib=js-2.3.1&s=35f5d7b043dbf13f0ce0c652dcb13c1a",
                 opacity: "0.3",
-                position: "50% 20%",
+                position: "60% 20%",
               }}
               button={
                 <Link

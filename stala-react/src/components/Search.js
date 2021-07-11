@@ -5,7 +5,7 @@ function Search() {
     <>
       <form className="">
         <label
-          htmlFor="search-stala"
+          htmlFor="search-stala-shop"
           className="form-label letter-spacing-2 text-uppercase"
         >
           Search
@@ -13,9 +13,9 @@ function Search() {
         <div className="d-flex justify-content-between align-items-center">
           <input
             type="text"
-            id="search-stala"
+            id="search-stala-shop"
             className="form-control text-white border-light py-2 me-3"
-            style={{ width: 500, borderWidth: 0, borderBottomWidth: 1 }}
+            style={{ maxWidth: 500, borderWidth: 0, borderBottomWidth: 1 }}
           />
           <Link to="/search/" className="btn btn-outline-light  ">
             <i className="bi bi-search"></i>

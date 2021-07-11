@@ -6,6 +6,7 @@ import { useLocation } from "react-router-dom";
 import queryString from "query-string";
 import ShoppingFilters from "../components/ShoppingFilters";
 import ShoppingGrid from "../components/ShoppingGrid";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 // http://localhost:3000/shop/men?&categories=jeans,tops&priceRange=0,100&sizes=xs,sm&colors=blue,red
 
@@ -20,11 +21,21 @@ function Shop() {
 
   return (
     <>
-      <div className="container-md">
-        <h2 className="text-capitalize  text-center my-4">{department}</h2>
-        <div className="d-flex flex-wrap ">
-          <div className="col-12 col-md-4 col-lg-3 col-xl-2">
-            <div className="sticky-top">
+      <div className="container-lg">
+        <div className="row my-2  align-items-center">
+          <div className="col-md-4 col-12 ">
+            <div className="d-flex d-md-block justify-content-center mt-2">
+              <Breadcrumbs />
+            </div>
+          </div>
+          <div className="col-md-4 col-12">
+            <h2 className="text-capitalize text-center my-5">{department}</h2>
+          </div>
+          <div className="col-md-4 col-12"></div>
+        </div>
+        <div className="row">
+          <div className="col-12 col-md-4 col-lg-3 col-xl-2 p-lg-0 ">
+            <div className="sticky-top ">
               <ShoppingFilters
                 // categories={categories}
                 colors={colors}
@@ -35,10 +46,8 @@ function Shop() {
               />
             </div>
           </div>
-          <div className="col-12 col-md-8 col-lg-9 col-xl-10">
-            <div className="d-flex flex-wrap container">
-              <ShoppingGrid />
-            </div>
+          <div className="col-12 col-md-8 col-lg-9 col-xl-10 pe-md-0">
+            <ShoppingGrid location={location} department={department} />
           </div>
         </div>
       </div>

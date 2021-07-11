@@ -1,19 +1,35 @@
 @use "sass:map";
 // @use "sass:math";
+$navbar-height: 60px;
 
-$navbar-height: 70px;
 $alert-height: 34px;
 
-// Checkbox look-alikes
-.checkbox-item {
-  margin-left: 1.5rem;
+// Nav Links
+.stala-link {
+  margin-left: calc(16px + 1rem);
+  &.active:before {
+    content: " ";
+    height: 24px;
+    width: 6px;
+    background-color: #3a3a3a;
+    left: 16px;
+    opacity: 0;
+  }
 }
-
-.checkbox-item:before {
-  content: "";
+.show .stala-link {
+  &.active:before {
+    position: absolute;
+    transition-delay: 0.3s;
+    transition-duration: 0.2s;
+    opacity: 1;
+  }
 }
 
 // Nav
+
+.letter-spacing-1 {
+  letter-spacing: -1px;
+}
 
 .stala-logo,
 .letter-spacing-2 {
@@ -162,7 +178,7 @@ $alert-height: 34px;
   transition-delay: 0.2s;
   visibility: hidden;
   &.show {
-    max-width: 500px;
+    max-width: 100%;
     visibility: visible;
   }
 }
@@ -199,7 +215,21 @@ $alert-height: 34px;
   }
 }
 
+.btn-responsive {
+  padding: 0.25rem 0.5rem;
+}
+
 @include media-breakpoint-up(lg) {
+  $navbar-height: 70px;
+  .navbar {
+    height: $navbar-height;
+  }
+
+  .sidemenu-nav {
+    height: calc(100vh - #{$navbar-height});
+    margin-top: $navbar-height;
+  }
+
   .w-lg-25 {
     width: 25% !important;
   }
@@ -228,5 +258,18 @@ $alert-height: 34px;
     color: inherit;
     padding: inherit;
     margin-top: inherit;
+  }
+
+  .sidemenu {
+    &.show {
+      // Managed in component file
+      max-width: 500px;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .btn-responsive {
+    padding: 0.375rem 0.75rem;
   }
 }

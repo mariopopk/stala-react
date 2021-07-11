@@ -10461,6 +10461,29 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.stala-link {
+  margin-left: calc(16px + 1rem);
+}
+.stala-link.active:before {
+  content: " ";
+  height: 24px;
+  width: 6px;
+  background-color: #3a3a3a;
+  left: 16px;
+  opacity: 0;
+}
+
+.show .stala-link.active:before {
+  position: absolute;
+  transition-delay: 0.3s;
+  transition-duration: 0.2s;
+  opacity: 1;
+}
+
+.letter-spacing-1 {
+  letter-spacing: -1px;
+}
+
 .stala-logo,
 .letter-spacing-2 {
   letter-spacing: 2px;
@@ -10551,7 +10574,7 @@ textarea.form-control-lg {
 }
 
 .navbar {
-  height: 70px;
+  height: 60px;
 }
 
 .small-title {
@@ -10605,16 +10628,16 @@ textarea.form-control-lg {
   visibility: hidden;
 }
 .sidemenu.show {
-  max-width: 500px;
+  max-width: 100%;
   visibility: visible;
 }
 
 .sidemenu-nav {
   display: block !important;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 60px);
   position: absolute;
   padding: 1rem;
-  margin-top: 70px;
+  margin-top: 60px;
   top: 0;
   left: 0;
   width: 100%;
@@ -10639,7 +10662,20 @@ textarea.form-control-lg {
   padding: 0.75rem;
 }
 
+.btn-responsive {
+  padding: 0.25rem 0.5rem;
+}
+
 @media (min-width: 992px) {
+  .navbar {
+    height: 70px;
+  }
+
+  .sidemenu-nav {
+    height: calc(100vh - 70px);
+    margin-top: 70px;
+  }
+
   .w-lg-25 {
     width: 25% !important;
   }
@@ -10669,6 +10705,15 @@ textarea.form-control-lg {
     color: inherit;
     padding: inherit;
     margin-top: inherit;
+  }
+
+  .sidemenu.show {
+    max-width: 500px;
+  }
+}
+@media (min-width: 768px) {
+  .btn-responsive {
+    padding: 0.375rem 0.75rem;
   }
 }
 

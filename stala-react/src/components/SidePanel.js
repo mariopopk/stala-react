@@ -10,6 +10,9 @@ function SidePanel({ sidePanelId, title, children }) {
     lockBody(!isOpen);
   };
 
+  const windowWidth = window.innerWidth;
+  const panelWidth = windowWidth > 576 ? windowWidth * 0.45 : windowWidth;
+
   return (
     <>
       <div
@@ -23,7 +26,7 @@ function SidePanel({ sidePanelId, title, children }) {
         }}
       >
         <button
-          className="btn text-dark "
+          className="btn text-dark btn-responsive"
           type="button"
           id={sidePanelId}
           data-bs-toggle="dropdown"
@@ -33,14 +36,15 @@ function SidePanel({ sidePanelId, title, children }) {
           {title}
         </button>
         <div
+          style={{ width: isOpen ? panelWidth : 0 }}
           className={"bg-dark text-white sidemenu " + (isOpen ? "show" : "")}
         >
           <div className="d-flex justify-content-between text-white p-4">
             <button
               onClick={() => handleClick(false)}
-              className="btn btn-outline-light btn-lg border-0"
+              className="btn btn-outline-light border-0"
             >
-              <i className="bi bi-x"></i>
+              <i className="bi bi-x-lg"></i>
               <span className="visually-hidden">Exit Search</span>
             </button>
           </div>

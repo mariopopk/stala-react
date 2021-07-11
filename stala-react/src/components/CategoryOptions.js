@@ -6,7 +6,7 @@ import { processQuery, lookUpQueryValue } from "../utils/queryStrings";
 function CategoryOptions({ location, department }) {
   const activeDepartment = getDepartmentBySlug(
     department,
-    dbCategories.subcategories
+    dbCategories[0].subcategories
   );
 
   const queryStr = location.search;
@@ -34,9 +34,9 @@ function CategoryOptions({ location, department }) {
                 to={`/shop/${department}?${query}`}
               >
                 {isActiveFilter ? (
-                  <i className="bi bi-check-circle-fill mx-2"></i>
+                  <i className="bi bi-slash-square-fill mx-2"></i>
                 ) : (
-                  <i className="bi bi-circle mx-2"></i>
+                  <i className="bi bi-square mx-2"></i>
                 )}
 
                 {category}

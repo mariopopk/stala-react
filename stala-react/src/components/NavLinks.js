@@ -2,7 +2,6 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import OutsideAlerter from "./OutsideAlerter";
 import { lockBody } from "../utils/helpers";
-
 function NavLinks() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -27,7 +26,7 @@ function NavLinks() {
         }}
       >
         <button
-          className="navbar-toggler border-0"
+          className="navbar-toggler border-0 btn-responsive ps-0"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"

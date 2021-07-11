@@ -14,10 +14,10 @@ function ShoppingFilters({ location, department }) {
           to={location.pathname}
           className={
             "btn my-2 w-100 btn-outline-primary" +
-            (activeFilters > 0 ? "" : " disabled")
+            (activeFilters > 0 ? "" : " disabled ")
           }
         >
-          Clear Filters
+          {activeFilters > 0 ? "Clear Filters" : "All Products"}
           {activeFilters > 0 && (
             <span className="mx-2">&#40;{activeFilters}&#41;</span>
           )}

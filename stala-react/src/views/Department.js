@@ -262,7 +262,7 @@ function Department() {
 
   const { name, image, catchphrase, subcategories, id } = getDepartmentBySlug(
     department,
-    dbCategories.subcategories
+    dbCategories[0].subcategories
   );
 
   return (
