@@ -1,11 +1,6 @@
 import { Link } from "react-router-dom";
 
-function Breadcrumbs() {
-  const links = [
-    { name: "Home", link: "/" },
-    { name: "Men", link: "/shop/men/categories" },
-    { name: "Shop", link: "/shop/men/" },
-  ];
+function Breadcrumbs({ links = [] }) {
   return (
     <div style={{ fontSize: "0.9rem" }}>
       {links.map(({ name, link }, i) => {
@@ -14,13 +9,16 @@ function Breadcrumbs() {
           <span key={name}>
             {!isLast ? (
               <>
-                <Link className="text-muted text-decoration-none" to={link}>
+                <Link
+                  className="text-muted text-decoration-none text-capitalize"
+                  to={link}
+                >
                   {name}
                 </Link>
                 <span className="mx-1">/</span>
               </>
             ) : (
-              <span>{name}</span>
+              <span className="text-capitalize">{name}</span>
             )}
           </span>
         );

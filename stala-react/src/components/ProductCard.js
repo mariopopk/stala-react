@@ -1,9 +1,16 @@
 import { resolveHost } from "../utils/host";
 import PropTypes from "prop-types";
 
-function ProductCard({ image, imageAlt, title, price, className, category }) {
+function ProductCard({
+  image,
+  imageAlt,
+  title,
+  price,
+  className = "",
+  category,
+}) {
   return (
-    <div className={"m-3 " + className}>
+    <div className={"m-2 " + className}>
       <img src={resolveHost(image)} className="img-fluid" alt={imageAlt} />
       <div className="mt-2">
         <p className="my-1">{price}</p>

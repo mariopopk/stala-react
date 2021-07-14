@@ -2,12 +2,13 @@ import { useParams } from "react-router";
 import { resolveHost } from "../utils/host";
 
 function Product() {
-  let { slug } = useParams();
+  let { slug: familyId } = useParams();
+
+  const productFamily = getProductFamily(familyId);
 
   return (
     <>
       <div className="container">
-        <span className="text-capitalize my-4"> {slug}</span>
         <div className="row">
           <div className="col-md-8 col-12">
             <img

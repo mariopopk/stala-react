@@ -3,21 +3,25 @@ import { useParams } from "react-router";
 import { useLocation } from "react-router-dom";
 // import Accordion from "../components/Accordion";
 // import DepartmentOptions from "../components/DepartmentOption";
-import queryString from "query-string";
 import ShoppingFilters from "../components/ShoppingFilters";
 import ShoppingGrid from "../components/ShoppingGrid";
 import Breadcrumbs from "../components/Breadcrumbs";
+import SidePanel from "../components/SidePanel";
+import { countQueries } from "../utils/queryStrings";
 
 // http://localhost:3000/shop/men?&categories=jeans,tops&priceRange=0,100&sizes=xs,sm&colors=blue,red
 
 function Shop() {
   const { department } = useParams();
   const location = useLocation();
-  const { categories, colors, priceRange, sizes } = queryString.parse(
-    location.search
-  );
 
-  console.log(categories, colors, priceRange, sizes);
+  const activeFilters = countQueries(location.search);
+
+  const links = [
+    { name: "Home", link: "/" },
+    { name: department, link: `/shop/${department}/categories` },
+    { name: "Shop" },
+  ];
 
   return (
     <>
@@ -25,7 +29,7 @@ function Shop() {
         <div className="row my-2  align-items-center">
           <div className="col-md-4 col-12 ">
             <div className="d-flex d-md-block justify-content-center mt-2">
-              <Breadcrumbs />
+              <Breadcrumbs links={links} />
             </div>
           </div>
           <div className="col-md-4 col-12">
@@ -35,15 +39,32 @@ function Shop() {
         </div>
         <div className="row">
           <div className="col-12 col-md-4 col-lg-3 col-xl-2 p-lg-0 ">
-            <div className="sticky-top ">
-              <ShoppingFilters
-                // categories={categories}
-                colors={colors}
-                priceRange={priceRange}
-                sizes={sizes}
-                location={location}
-                department={department}
-              />
+            <div className="d-block d-md-none mb-4">
+              <SidePanel
+                panelTitle={
+                  <div className="text-center alt-font lead">Filters</div>
+                }
+                btnClassName="btn btn-outline-primary w-100 d-flex py-2 fw-bold"
+                title={
+                  <span>
+                    <i className="bi bi-filter-square-fill mx-2"></i>
+                    {`Filters (${activeFilters})`}
+                  </span>
+                }
+                handleClosingEventsAutomatically={false}
+                doneBtn={true}
+              >
+                <div className="px-5 pb-5">
+                  <ShoppingFilters
+                    location={location}
+                    department={department}
+                  />
+                </div>
+              </SidePanel>
+            </div>
+
+            <div className="d-none d-md-block sticky-top" style={{ top: 60 }}>
+              <ShoppingFilters location={location} department={department} />
             </div>
           </div>
           <div className="col-12 col-md-8 col-lg-9 col-xl-10 pe-md-0">

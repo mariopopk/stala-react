@@ -2,74 +2,141 @@ import ProductCard from "./ProductCard";
 import { Link } from "react-router-dom";
 import { products, categories } from "../utils/data";
 import { getDepartmentById, getDepartmentBySlug } from "../utils/helpers";
-import { lookUpQueryValue, countQueries } from "../utils/queryStrings";
+import { lookUpQueryValue } from "../utils/queryStrings";
+const queryString = require("query-string");
 
-function ShoppingGrid({ location, department }) {
+function ShoppingGrid({ location, department: departmentSlug }) {
   const queryStr = location.search;
-  const activeFilters = countQueries(queryStr);
+  const queryObj = queryString.parse(queryStr);
+  const {
+    categories: selectedCategories,
+    colors: selectedColors,
+    priceRanges: selectedPriceRanges,
+    sizes: selectedSizes,
+  } = queryObj;
+
+  // const activeFiltersCount = countQueries(queryStr);
   const activeDepartment = getDepartmentBySlug(
-    department,
+    departmentSlug,
     categories[0].subcategories
   );
 
-  return (
-    <div className="row">
-      {products.map(
-        ({
-          id,
-          image,
-          familyId,
-          name,
-          price,
-          color,
-          category,
-          department: departmentId,
-        }) => {
-          const categoryName = getDepartmentById(
-            categories,
-            category,
-            "subcategories"
-          ).name;
+  const showProducts = products.map(
+    ({
+      id,
+      image,
+      familyId,
+      name,
+      price,
+      color,
+      category,
+      sizes,
+      department: departmentId,
+    }) => {
+      const categoryName = getDepartmentById(
+        categories,
+        category,
+        "subcategories"
+      ).name;
 
-          const isSelectedFilter = lookUpQueryValue(
-            queryStr,
-            "categories",
-            category.toString()
-          );
+      // Department Filter BELOW
+      const isSelectedDepartment = activeDepartment.id === departmentId;
+      if (!isSelectedDepartment) {
+        return null;
+      }
+      // Department Filter ABOVE
 
-          const isSelectedDepartment = activeDepartment.id === departmentId;
-
-          const anyActiveFilters = activeFilters > 0;
-
-          if (!isSelectedDepartment) {
-            return null;
-          }
-
-          if (!anyActiveFilters) {
-          } else if (!isSelectedFilter) {
-            return null;
-          }
-
-          return (
-            <div className="col-md-6 col-lg-4 col-6 p-0" key={id}>
-              <Link
-                className="text-decoration-none m-0"
-                to={"/shop/product/" + familyId}
-              >
-                <ProductCard
-                  imageAlt={name}
-                  title={name + " " + color}
-                  price={"$" + price.toString()}
-                  image={image}
-                  category={categoryName}
-                />
-              </Link>
-            </div>
-          );
+      // Category Filter BELOW
+      if (selectedCategories) {
+        const matchesSelectedCategory = lookUpQueryValue(
+          queryStr,
+          "categories",
+          category.toString()
+        );
+        if (!matchesSelectedCategory) {
+          return;
         }
-      )}
-    </div>
+      }
+      // Category Filter ABOVE
+
+      // Color Filter BELOW
+      if (selectedColors) {
+        const matchesSelectedColor = lookUpQueryValue(
+          queryStr,
+          "colors",
+          color
+        );
+        if (!matchesSelectedColor) {
+          return;
+        }
+      }
+      // Color Filter ABOVE
+
+      // Size Filter BELOW
+      if (selectedPriceRanges) {
+        let range = "";
+        if (price < 25) {
+          range = "0-25";
+        } else if (price > 25 && price < 50) {
+          range = "25-50";
+        } else {
+          range = "50-100";
+        }
+        const matchesSelectedPriceRange = lookUpQueryValue(
+          queryStr,
+          "priceRanges",
+          range
+        );
+
+        if (!matchesSelectedPriceRange) {
+          return;
+        }
+      }
+      // Size Filter Above
+
+      // Size Filter BELOW
+      if (selectedSizes) {
+        const selectedSizesArr = selectedSizes.split(",");
+        const availabilities = selectedSizesArr.map((selectedSize) => {
+          return sizes[selectedSize] && sizes[selectedSize] > 0;
+        });
+
+        const matchesSelectedSizes = availabilities.includes(true);
+
+        if (!matchesSelectedSizes) {
+          return;
+        }
+      }
+      // Size Filter Above
+
+      return (
+        <div className="col-md-6 col-lg-4 col-6 p-0" key={id}>
+          <Link
+            className="text-decoration-none m-0"
+            to={"/shop/product/" + familyId}
+          >
+            <ProductCard
+              imageAlt={name}
+              title={name + " " + color}
+              price={"$" + price.toString()}
+              image={image}
+              category={categoryName}
+            />
+          </Link>
+        </div>
+      );
+    }
   );
+
+  return <div className="d-flex flex-wrap">{showProducts}</div>;
 }
+
+// console.log(
+//   queryStr,
+//   selectedCategories,
+//   selectedColors,
+//   selectedPriceRanges,
+//   selectedSizes
+// );
 
 export default ShoppingGrid;

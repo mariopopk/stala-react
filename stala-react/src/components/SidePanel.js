@@ -2,7 +2,16 @@ import { useState } from "react";
 import OutsideAlerter from "./OutsideAlerter";
 import { lockBody } from "../utils/helpers";
 
-function SidePanel({ sidePanelId, title, children }) {
+function SidePanel({
+  sidePanelId,
+  title,
+  children,
+  darkMode = false,
+  handleClosingEventsAutomatically = true,
+  doneBtn = false,
+  btnClassName = "btn btn-responsive",
+  panelTitle,
+}) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = (boolean) => {
@@ -10,23 +19,35 @@ function SidePanel({ sidePanelId, title, children }) {
     lockBody(!isOpen);
   };
 
+  const panelBtnClassName = "btn btn-outline-secondary btn-responsive border-0";
+  const containerClassName = darkMode
+    ? "bg-dark text-white"
+    : "bg-white text-dark";
+
+  const backdropClassName = darkMode ? "bg-white" : "bg-dark";
+
   const windowWidth = window.innerWidth;
-  const panelWidth = windowWidth > 576 ? windowWidth * 0.45 : windowWidth;
+  const panelWidth = windowWidth > 576 ? windowWidth * 0.6 : windowWidth;
 
   return (
     <>
       <div
-        className={"position-fixed bg-white backdrop " + (isOpen ? "show" : "")}
+        className={
+          "position-fixed backdrop " +
+          backdropClassName +
+          " " +
+          (isOpen ? "show" : "")
+        }
       ></div>
 
       <OutsideAlerter
-        active={isOpen}
+        active={handleClosingEventsAutomatically}
         callback={() => {
           if (isOpen) handleClick(false);
         }}
       >
         <button
-          className="btn text-dark btn-responsive"
+          className={btnClassName}
           type="button"
           id={sidePanelId}
           data-bs-toggle="dropdown"
@@ -37,18 +58,37 @@ function SidePanel({ sidePanelId, title, children }) {
         </button>
         <div
           style={{ width: isOpen ? panelWidth : 0 }}
-          className={"bg-dark text-white sidemenu " + (isOpen ? "show" : "")}
+          className={
+            "sidemenu " + containerClassName + " " + (isOpen ? "show" : "")
+          }
         >
-          <div className="d-flex justify-content-between text-white p-4">
-            <button
-              onClick={() => handleClick(false)}
-              className="btn btn-outline-light border-0"
-            >
-              <i className="bi bi-x-lg"></i>
-              <span className="visually-hidden">Exit Search</span>
-            </button>
+          <div className="d-flex flex-wrap p-4">
+            <div className="col-4">
+              <button
+                onClick={() => handleClick(false)}
+                className={panelBtnClassName}
+              >
+                <i className="bi bi-x-lg"></i>
+                <span className="visually-hidden">Exit</span>
+              </button>
+            </div>
+
+            <div className="col-4">{panelTitle}</div>
           </div>
           <div>{children}</div>
+          {doneBtn && (
+            <div className="position-fixed w-100" style={{ bottom: 0 }}>
+              {" "}
+              <button
+                onClick={() => handleClick(false)}
+                className={
+                  "btn btn-success d-flex justify-content-center w-100 btn-lg "
+                }
+              >
+                Done
+              </button>{" "}
+            </div>
+          )}
         </div>
       </OutsideAlerter>
     </>

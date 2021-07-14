@@ -4,6 +4,7 @@ import SidePanel from "./SidePanel";
 function SearchPanel() {
   return (
     <SidePanel
+      darkMode={true}
       dropdownId="search-panel"
       title={
         <>

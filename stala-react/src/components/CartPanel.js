@@ -4,6 +4,7 @@ function CartPanel() {
   return (
     <SidePanel
       dropdownId="cart-panel"
+      darkMode={true}
       title={
         <>
           <i className="bi bi-cart"></i>

@@ -18,19 +18,16 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.alt-font {
   font-family: "Libre Baskerville", serif;
 }
 
 $primary: #3a3a3a;
-$secondary: #8c6e43;
+$secondary: #cfcfcf;
 $danger: #be1217;
 $success: #3e7957;
 $light: #fefaf6;
-
-$custom-colors: (
-  "tertiary": #bca279,
-);
 
 $enable-rounded: false;
 

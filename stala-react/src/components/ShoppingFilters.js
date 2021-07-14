@@ -3,6 +3,9 @@ import DepartmentOptions from "./DepartmentOptions";
 import { Link } from "react-router-dom";
 import CategoryOptions from "./CategoryOptions";
 import { countQueries } from "../utils/queryStrings";
+import SizeOptions from "./SizeOptions";
+import ColorOptions from "./ColorOptions";
+import PriceOptions from "./PriceOptions";
 
 function ShoppingFilters({ location, department }) {
   const activeFilters = countQueries(location.search);
@@ -14,7 +17,7 @@ function ShoppingFilters({ location, department }) {
           to={location.pathname}
           className={
             "btn my-2 w-100 btn-outline-primary" +
-            (activeFilters > 0 ? "" : " disabled ")
+            (activeFilters > 0 ? "" : "border-0 disabled ")
           }
         >
           {activeFilters > 0 ? "Clear Filters" : "All Products"}
@@ -37,6 +40,22 @@ function ShoppingFilters({ location, department }) {
             body: (
               <CategoryOptions location={location} department={department} />
             ),
+          },
+          {
+            title: "Size",
+            key: 3,
+            body: <SizeOptions location={location} department={department} />,
+          },
+          {
+            title: "Color",
+            key: 4,
+            body: <ColorOptions location={location} department={department} />,
+          },
+
+          {
+            title: "Price",
+            key: 5,
+            body: <PriceOptions location={location} department={department} />,
           },
         ]}
         accordionName="filters"

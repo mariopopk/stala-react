@@ -11,6 +11,8 @@ export function getDepartmentBySlug(slug, categories) {
   );
 }
 
+export function getProductFamily(products) {}
+
 export function getDepartmentById(arr, itemId, nestingKey) {
   return arr.reduce((a, item) => {
     if (a) return a;

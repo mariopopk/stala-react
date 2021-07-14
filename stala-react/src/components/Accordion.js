@@ -33,10 +33,16 @@ function AccordionItem({
   i,
 }) {
   return (
-    <div className="accordion-item">
-      <h2 className="accordion-header" id={`${accordionName}-header-${i}`}>
+    <div className="accordion-item bg-transparent ">
+      <div
+        className="accordion-header alt-font"
+        id={`${accordionName}-header-${i}`}
+      >
         <button
-          className="accordion-button collapsed px-0 "
+          className={
+            "accordion-button bg-transparent px-0 " +
+            (isOpen ? "" : "collapsed")
+          }
           type="button"
           data-bs-toggle="collapse"
           data-bs-target={`#${accordionName}-collapse-${i}`}
@@ -49,7 +55,7 @@ function AccordionItem({
         >
           {title}
         </button>
-      </h2>
+      </div>
       <div
         id={`${accordionName}-collapse-${i}`}
         className={`accordion-content ${isOpen ? "show" : ""}`}
