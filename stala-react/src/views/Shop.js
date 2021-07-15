@@ -18,9 +18,9 @@ function Shop() {
   const activeFilters = countQueries(location.search);
 
   const links = [
-    { name: "Home", link: "/" },
-    { name: department, link: `/shop/${department}/categories` },
-    { name: "Shop" },
+    { name: "Home", link: "/", id: 1 },
+    { name: department, link: `/shop/${department}/categories`, id: 2 },
+    { name: "Shop", id: 3 },
   ];
 
   return (

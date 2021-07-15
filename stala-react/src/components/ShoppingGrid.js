@@ -113,11 +113,11 @@ function ShoppingGrid({ location, department: departmentSlug }) {
         <div className="col-md-6 col-lg-4 col-6 p-0" key={id}>
           <Link
             className="text-decoration-none m-0"
-            to={"/shop/product/" + familyId}
+            to={"/shop/product/" + familyId + "?color=" + color.toLowerCase()}
           >
             <ProductCard
               imageAlt={name}
-              title={name + " " + color}
+              title={name + " - " + color}
               price={"$" + price.toString()}
               image={image}
               category={categoryName}

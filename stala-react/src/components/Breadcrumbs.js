@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 function Breadcrumbs({ links = [] }) {
   return (
     <div style={{ fontSize: "0.9rem" }}>
-      {links.map(({ name, link }, i) => {
+      {links.map(({ name, link, id }, i) => {
         const isLast = i === links.length - 1;
         return (
-          <span key={name}>
+          <span key={id}>
             {!isLast ? (
               <>
                 <Link

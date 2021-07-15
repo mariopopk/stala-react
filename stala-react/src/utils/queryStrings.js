@@ -40,6 +40,27 @@ export function processQuery(queryStr, key, value) {
   }
 }
 
+export function replaceQuery(queryStr, key, value) {
+  const queryObj = queryString.parse(queryStr);
+  const filter = queryObj[key];
+
+  // If filter does not exist, return nothing
+  if (!filter)
+    return queryString.stringify(
+      { ...queryObj, [key]: value },
+      { encode: false }
+    );
+
+  if (filter) {
+    return queryString.stringify(
+      { ...queryObj, [key]: value },
+      { encode: false }
+    );
+  } else {
+    return queryString.stringify({ ...queryObj, [key]: [] }, { encode: false });
+  }
+}
+
 // Checks whether value exists in the query
 export function lookUpQueryValue(queryStr, key, value) {
   const queryObj = queryString.parse(queryStr);

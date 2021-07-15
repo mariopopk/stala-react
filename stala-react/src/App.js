@@ -1,4 +1,4 @@
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect, useParams } from "react-router-dom";
 import NotFound from "./views/404";
 import Home from "./views/Home";
 import Page from "./views/Page";
@@ -35,7 +35,11 @@ function App({ currentUser }) {
             return currentUser ? <Redirect to="/" /> : <LoginAndSignUp />;
           }}
         />
+        {/* <Route path="/shop/product/:slug/:color">
+          <Product />
+        </Route> */}
         <Route path="/shop/product/:slug" children={<Product />} />
+
         <Route path="*" children={<NotFound />} />
       </Switch>
       <Footer />

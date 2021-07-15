@@ -11,7 +11,15 @@ export function getDepartmentBySlug(slug, categories) {
   );
 }
 
-export function getProductFamily(products) {}
+export function getProductFamily(familyId, products) {
+  const productsInSameFamily = [];
+  products.forEach((product) => {
+    if (product.familyId === familyId) {
+      productsInSameFamily.push(product);
+    }
+  });
+  return productsInSameFamily;
+}
 
 export function getDepartmentById(arr, itemId, nestingKey) {
   return arr.reduce((a, item) => {
