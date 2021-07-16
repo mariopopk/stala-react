@@ -14,9 +14,9 @@ function NavBar() {
         <div className="col-4">
           <div className="d-flex align-items-center">
             <NavLinks />
-            <div className="d-block d-md-none">
+            {/* <div className="d-block d-md-none">
               <SearchPanel />
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="col-4 d-flex justify-content-center">

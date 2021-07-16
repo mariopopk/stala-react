@@ -40,9 +40,14 @@ export default function OutsideAlerter({
   children,
   callback = () => {},
   active,
+  className = "",
 }) {
   const wrapperRef = useRef(null);
   useOutsideAlerter(wrapperRef, callback, active);
 
-  return <div ref={wrapperRef}>{children}</div>;
+  return (
+    <div className={className} ref={wrapperRef}>
+      {children}
+    </div>
+  );
 }

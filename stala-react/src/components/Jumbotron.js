@@ -16,7 +16,7 @@ function Jumbotron({ title, content, button, image, height, className }) {
   return (
     <div
       className={
-        "py-5 d-flex justify-content-center align-items-center flex-column image-cover " +
+        "py-5 d-flex justify-content-center align-items-center flex-column image-cover  " +
         className
       }
       style={style}

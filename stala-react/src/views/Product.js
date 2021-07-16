@@ -5,12 +5,8 @@ import { categories, products } from "../utils/data";
 import Breadcrumbs from "../components/Breadcrumbs";
 import { keyColors } from "../utils/data";
 import { NavLink, useLocation } from "react-router-dom";
-import {
-  lookUpQueryValue,
-  processQuery,
-  replaceQuery,
-} from "../utils/queryStrings";
-import { useState } from "react";
+import Modal from "../components/Modal";
+import { lookUpQueryValue, replaceQuery } from "../utils/queryStrings";
 const queryString = require("query-string");
 
 function getProductByColor(color, products) {
@@ -100,11 +96,17 @@ function Product() {
                 {productsInSameFamily.map(({ color }, i) => {
                   const link =
                     location.pathname + "?color=" + color.toLowerCase();
+                  const isActive = currentColor === color.toLowerCase();
 
                   return (
-                    <NavLink to={link} className="me-1 btn" key={color}>
+                    <NavLink to={link} className="me-1 btn fs-2 " key={color}>
                       <i
-                        className="bi bi-circle-fill display-5"
+                        className={
+                          "bi " +
+                          (isActive
+                            ? "bi-check-circle-fill "
+                            : "bi-circle-fill ")
+                        }
                         style={{
                           color: keyColors[color.toLowerCase()],
                         }}
@@ -164,11 +166,33 @@ function Product() {
                     })}
                   </div>
                 </ul>
+                <div className="d-flex justify-content-end">
+                  <Modal title={<span>Size Guide</span>}>
+                    <p>
+                      We are fully compliant with standard sizes in all of our
+                      departments. For a comprehensive size guide, click here:
+                      <a
+                        className="letter-spacing-1 fw-bold"
+                        href="https://www.sizeguide.net/"
+                      >
+                        {" "}
+                        SIZEGUIDE.NET
+                      </a>
+                    </p>
+                  </Modal>
+                </div>
               </div>
               {currentSize && sizes[currentSize] <= 0 ? (
-                <span className="text-danger letter-spacing-1 lead">
-                  Size is not available
-                </span>
+                <div
+                  className="ps-3 border-danger text-danger letter-spacing-1 lead"
+                  role="alert"
+                  style={{
+                    borderWidth: "0 0 0 4px",
+                    borderStyle: "solid",
+                  }}
+                >
+                  Size is not available{" "}
+                </div>
               ) : (
                 <span className="text-muted letter-spacing-1 lead">
                   In Stock

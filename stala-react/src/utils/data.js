@@ -320,19 +320,6 @@ export const categories = [
 
 export const products = [
   {
-    id: 4,
-    familyId: "60e9151bfc13ae5bbf000064",
-    name: "Cotton Shirt",
-    color: "Orange",
-    price: 8.99,
-    sizes: { xs: 0, s: 1, m: 2, l: 0, xl: 0, xxl: 3 },
-    category: 101,
-    department: 100,
-    image:
-      "https://calvinklein.scene7.com/is/image/CalvinKlein/24421260_215_alternate1?wid=856&hei=1127&fmt=jpeg&qlt=85%2C0&resMode=sharp2&op_usm=0.9%2C1.0%2C8%2C0&iccEmbed=0",
-    categoryName: "Tops",
-  },
-  {
     id: 9,
     familyId: "60e9151bfc13ae5bbf000064",
     name: "Cotton Shirt",
@@ -543,7 +530,7 @@ export const products = [
   {
     id: 141,
     familyId: "60e9151bfc13ae5bbf0000f0",
-    name: "Shorts",
+    name: "Khaki Shorts",
     color: "Green",
     price: 22.99,
     sizes: { xs: 1, s: 1, m: 2, l: 3, xl: 0, xxl: 3 },
@@ -555,7 +542,7 @@ export const products = [
   {
     id: 142,
     familyId: "60e9151bfc13ae5bbf0000f0",
-    name: "Shorts",
+    name: "Khaki Shorts",
     color: "Gray",
     price: 22.99,
     sizes: { xs: 1, s: 1, m: 2, l: 3, xl: 0, xxl: 3 },
@@ -567,7 +554,7 @@ export const products = [
   {
     id: 144,
     familyId: "60e9151bfc13ae5bbf0000f0",
-    name: "Shorts",
+    name: "Khaki Shorts",
     color: "Blue",
     price: 22.99,
     sizes: { xs: 1, s: 1, m: 2, l: 3, xl: 0, xxl: 3 },

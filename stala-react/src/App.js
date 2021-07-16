@@ -10,10 +10,13 @@ import Footer from "./components/Footer";
 import { connect } from "react-redux";
 import LoginAndSignUp from "./views/LoginAndSignUp";
 import Product from "./views/Product";
-
+import ScrollToTop from "./components/ScrollToTop";
+import Cart from "./views/Cart";
 function App({ currentUser }) {
   return (
     <div className="">
+      <ScrollToTop />
+
       <Alert>
         Free shipping on 2+ Items <span className="mx-2">|</span> Extra 20% off
         sale
@@ -39,6 +42,7 @@ function App({ currentUser }) {
           <Product />
         </Route> */}
         <Route path="/shop/product/:slug" children={<Product />} />
+        <Route path="/cart" children={<Cart />} />
 
         <Route path="*" children={<NotFound />} />
       </Switch>

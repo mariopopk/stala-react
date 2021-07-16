@@ -10,7 +10,7 @@ function Carousel({ height = 500, carouselName = "carousel" }) {
   const slides = [
     {
       id: 1,
-      link: "/a",
+      link: "/shop/women?categories=202",
       caption: (
         <div className=" justify-content-start align-items-center h-100">
           <div className="text-center carousel-box ">
@@ -26,7 +26,7 @@ function Carousel({ height = 500, carouselName = "carousel" }) {
     },
     {
       id: 2,
-      link: "/b",
+      link: "/shop/women?categories=203",
       caption: (
         <div className=" justify-content-start align-items-center h-100">
           <div className="text-center carousel-box bg-light ">
@@ -44,7 +44,7 @@ function Carousel({ height = 500, carouselName = "carousel" }) {
     },
     {
       id: 3,
-      link: "/c",
+      link: "/shop/women?categories=209",
       caption: (
         <div className=" justify-content-start  align-items-center h-100">
           <div className="text-center carousel-box ">
@@ -121,7 +121,7 @@ function Carousel({ height = 500, carouselName = "carousel" }) {
         }}
         tabIndex={-1}
       >
-        <i className="bi bi-arrow-left-short text-primary display-5"></i>
+        <i className="bi bi-arrow-left-short text-primary fs-2"></i>
         <span className="visually-hidden">Previous</span>
       </button>
       <button
@@ -134,7 +134,7 @@ function Carousel({ height = 500, carouselName = "carousel" }) {
         }}
         tabIndex={-1}
       >
-        <i className="bi bi-arrow-right-short text-primary display-5"></i>
+        <i className="bi bi-arrow-right-short text-primary fs-2"></i>
         <span className="visually-hidden">Next</span>
       </button>
     </div>

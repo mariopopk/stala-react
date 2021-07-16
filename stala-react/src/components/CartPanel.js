@@ -4,7 +4,12 @@ function CartPanel() {
   return (
     <SidePanel
       dropdownId="cart-panel"
-      darkMode={true}
+      darkMode={false}
+      panelTitle={
+        <span className="fs-5 fw-bold d-flex justify-content-center ">
+          My Cart
+        </span>
+      }
       title={
         <>
           <i className="bi bi-cart"></i>
@@ -12,7 +17,7 @@ function CartPanel() {
         </>
       }
     >
-      <div className="px-5 py-4">
+      <div className="px-3 py-4" style={{ maxWidth: 500 }}>
         <Cart />
       </div>
     </SidePanel>

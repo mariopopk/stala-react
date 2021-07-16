@@ -28,6 +28,9 @@ function SidePanel({
 
   const windowWidth = window.innerWidth;
   const panelWidth = windowWidth > 576 ? windowWidth * 0.6 : windowWidth;
+  // const panelWidth = 576;
+
+  const transform = !isOpen && `translate(${panelWidth}px, 0px)`;
 
   return (
     <>
@@ -57,7 +60,10 @@ function SidePanel({
           {title}
         </button>
         <div
-          style={{ width: isOpen ? panelWidth : 0 }}
+          style={{
+            width: panelWidth,
+            transform: transform,
+          }}
           className={
             "sidemenu " + containerClassName + " " + (isOpen ? "show" : "")
           }

@@ -8,18 +8,7 @@ function ImagesSnapshot({ title, href, image }) {
     <div className="m-2">
       <Link to={href}>
         {image && (
-          <img
-            src={resolveHost(image)}
-            alt=""
-            // onError={(e) => {
-            //   console.log("error", e);
-            // }}
-            style={{
-              height: 500,
-              width: "100%",
-              objectFit: "cover",
-            }}
-          />
+          <img src={resolveHost(image)} alt="" className="image-snapshot" />
         )}
         <p className="text-center">
           <span className="btn text-uppercase fw-bold">{title}</span>

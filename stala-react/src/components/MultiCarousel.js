@@ -81,7 +81,7 @@ function MultiCarousel({
           }}
           tabIndex={-1}
         >
-          <i className="bi bi-arrow-left-short text-primary display-5"></i>
+          <i className="bi bi-arrow-left-short text-primary fs-2"></i>
           <span className="visually-hidden">Previous</span>
         </button>
         <button
@@ -96,7 +96,7 @@ function MultiCarousel({
           }}
           tabIndex={-1}
         >
-          <i className="bi bi-arrow-right-short text-primary display-5"></i>
+          <i className="bi bi-arrow-right-short text-primary fs-2"></i>
           <span className="visually-hidden">Next</span>
         </button>
       </div>
