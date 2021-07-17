@@ -3,10 +3,14 @@ import { resolveHost } from "../utils/host";
 import { getDepartmentById, getProductFamily } from "../utils/helpers";
 import { categories, products } from "../utils/data";
 import Breadcrumbs from "../components/Breadcrumbs";
-import { keyColors } from "../utils/data";
-import { NavLink, useLocation } from "react-router-dom";
-import Modal from "../components/Modal";
-import { lookUpQueryValue, replaceQuery } from "../utils/queryStrings";
+import { useLocation } from "react-router-dom";
+import { connect } from "react-redux";
+import { addProduct } from "../redux/cart/cart.actions";
+import ProductColorPicker from "../components/ProductColorPicker";
+import SizeGuide from "../components/SizeGuide";
+import ProductSizePicker from "../components/ProductSizePicker";
+import ProductInventoryAlert from "../components/ProductInventoryAlert";
+import { useState } from "react";
 const queryString = require("query-string");
 
 function getProductByColor(color, products) {
@@ -17,25 +21,34 @@ function getProductByColor(color, products) {
   return null;
 }
 
-function Product() {
+function Product({ addProduct }) {
+  const [amount, setAmount] = useState(1);
   const { slug: familyId } = useParams();
   const location = useLocation();
-  const { color: currentColor, size: currentSize } = queryString.parse(
+  const { color: selectedColor, size: selectedSize } = queryString.parse(
     location.search
   );
   const productsInSameFamily = getProductFamily(familyId, products);
+
+  const colorOptions = productsInSameFamily.map((product) => {
+    return product.color;
+  });
+
+  //Product that will show
+  const productInPage =
+    getProductByColor(selectedColor, productsInSameFamily) ||
+    productsInSameFamily[0];
 
   const {
     id,
     name,
     color,
     price,
-    sizes,
+    sizes: sizesInventory,
     category: categoryId,
     department: departmentId,
     image,
-  } = getProductByColor(currentColor, productsInSameFamily) ||
-  productsInSameFamily[0];
+  } = productInPage;
 
   const category = getDepartmentById(categories, categoryId, "subcategories");
   const department = getDepartmentById(
@@ -43,12 +56,6 @@ function Product() {
     departmentId,
     "subcategories"
   );
-
-  const sizesKeys = [];
-
-  for (let size in sizes) {
-    sizesKeys.push(size);
-  }
 
   const links = [
     { name: "Home", link: "", id: 1 },
@@ -68,6 +75,9 @@ function Product() {
     },
   ];
 
+  const isButtonDisabled =
+    !(selectedColor && selectedSize) || sizesInventory[selectedSize] <= 0;
+
   return (
     <>
       <div className="container">
@@ -86,141 +96,56 @@ function Product() {
                 {name} - {color}
               </p>
               <p className="lead">${price}</p>
-              <div className="mt-4">
-                <div className="letter-spacing-1 text-uppercase m-2">
-                  Color
-                  <span className="text-muted mx-2 letter-spacing-1">
-                    {color}
-                  </span>
-                </div>
-                {productsInSameFamily.map(({ color }, i) => {
-                  const link =
-                    location.pathname + "?color=" + color.toLowerCase();
-                  const isActive = currentColor === color.toLowerCase();
-
-                  return (
-                    <NavLink to={link} className="me-1 btn fs-2 " key={color}>
-                      <i
-                        className={
-                          "bi " +
-                          (isActive
-                            ? "bi-check-circle-fill "
-                            : "bi-circle-fill ")
-                        }
-                        style={{
-                          color: keyColors[color.toLowerCase()],
-                        }}
-                      ></i>
-                    </NavLink>
-                  );
-                })}
+              <div className="mt-5">
+                <ProductColorPicker colorOptions={colorOptions} />
               </div>
               <div className="mt-4">
-                <div className=" m-2">
-                  <span className="letter-spacing-1 text-uppercase">Size</span>
-                </div>
-                <ul className="list-unstyled ">
-                  <div className="row row-cols-3 g-3" style={{ maxWidth: 250 }}>
-                    {sizesKeys.map((size) => {
-                      const count = sizes[size];
-                      const link =
-                        location.pathname +
-                        "?" +
-                        replaceQuery(location.search, "size", size);
-
-                      const isActiveFilter = lookUpQueryValue(
-                        location.search,
-                        "size",
-                        size
-                      );
-
-                      if (count <= 0)
-                        return (
-                          <li key={size}>
-                            <NavLink
-                              to={link}
-                              isActive={() => {
-                                return isActiveFilter;
-                              }}
-                              activeClassName="btn-primary disabled"
-                              className="btn btn-sm  text-decoration-line-through border text-uppercase w-100 py-3"
-                            >
-                              {size}
-                            </NavLink>
-                          </li>
-                        );
-                      return (
-                        <li key={size}>
-                          <NavLink
-                            isActive={() => {
-                              return isActiveFilter;
-                            }}
-                            activeClassName="btn-primary"
-                            to={link}
-                            className="btn btn-sm  border  text-uppercase w-100 py-3"
-                          >
-                            {size}
-                          </NavLink>
-                        </li>
-                      );
-                    })}
-                  </div>
-                </ul>
-                <div className="d-flex justify-content-end">
-                  <Modal title={<span>Size Guide</span>}>
-                    <p>
-                      We are fully compliant with standard sizes in all of our
-                      departments. For a comprehensive size guide, click here:
-                      <a
-                        className="letter-spacing-1 fw-bold"
-                        href="https://www.sizeguide.net/"
-                      >
-                        {" "}
-                        SIZEGUIDE.NET
-                      </a>
-                    </p>
-                  </Modal>
-                </div>
+                <ProductSizePicker sizesInventory={sizesInventory} />
               </div>
-              {currentSize && sizes[currentSize] <= 0 ? (
-                <div
-                  className="ps-3 border-danger text-danger letter-spacing-1 lead"
-                  role="alert"
-                  style={{
-                    borderWidth: "0 0 0 4px",
-                    borderStyle: "solid",
-                  }}
-                >
-                  Size is not available{" "}
-                </div>
-              ) : (
-                <span className="text-muted letter-spacing-1 lead">
-                  In Stock
-                </span>
-              )}
+              <div className="d-flex justify-content-end">
+                {sizesInventory && <SizeGuide />}
+              </div>
+
+              <ProductInventoryAlert
+                selectedSize={selectedSize}
+                sizesInventory={sizesInventory}
+              />
+
               <div className="d-flex mt-5">
                 <select
                   style={{ maxWidth: 70 }}
                   className="form-select"
                   aria-label="1"
+                  value={amount}
+                  onChange={(e) => {
+                    setAmount(e.target.value);
+                  }}
                 >
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                  <option>6</option>
+                  {[1, 2, 3, 4, 5, 6].map((number) => {
+                    return (
+                      <option key={number} value={number}>
+                        {number}
+                      </option>
+                    );
+                  })}
                 </select>
 
                 <button
-                  disabled={
-                    !(currentColor && currentSize) || sizes[currentSize] <= 0
-                  }
-                  className="btn btn-primary w-100 ms-2 py-2 btn-lg "
+                  onClick={() => {
+                    addProduct({
+                      name,
+                      id: familyId,
+                      image,
+                      selectedColor,
+                      selectedSize,
+                      price,
+                      amount,
+                    });
+                  }}
+                  disabled={isButtonDisabled}
+                  className="btn btn-primary w-100 ms-2 py-2 btn-lg"
                 >
-                  {!(currentColor && currentSize)
-                    ? "Size is not selected"
-                    : "Add to Cart"}
+                  Add to Cart
                 </button>
               </div>
             </div>
@@ -231,4 +156,8 @@ function Product() {
   );
 }
 
-export default Product;
+const mapDispatchToProps = (dispatch) => ({
+  addProduct: (product) => dispatch(addProduct(product)),
+});
+
+export default connect(null, mapDispatchToProps)(Product);

@@ -1,5 +1,5 @@
 const initialState = {
-  cart: [],
+  products: [],
 };
 
 const cartReducer = (state = initialState, action) => {
@@ -7,7 +7,7 @@ const cartReducer = (state = initialState, action) => {
     case "ADD_PRODUCT":
       return {
         ...state, // Previous state
-        cart: [...state.cart, action.payload],
+        products: [...state.products, action.payload],
       };
     default:
       return state;

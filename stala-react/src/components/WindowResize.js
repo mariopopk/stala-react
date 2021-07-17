@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 function debounce(fn, ms) {
   let timer;
@@ -11,7 +11,7 @@ function debounce(fn, ms) {
   };
 }
 
-function WindowResize({ children, callback = () => {} }) {
+function WindowResize({ children }) {
   const [dimensions, setDimensions] = useState({
     height: window.innerHeight,
     width: window.innerWidth,
@@ -29,8 +29,6 @@ function WindowResize({ children, callback = () => {} }) {
     return (_) => {
       window.removeEventListener("resize", debouncedHandleResize);
     };
-
-    callback(dimensions.width, dimensions.height);
   });
   return (
     <div>

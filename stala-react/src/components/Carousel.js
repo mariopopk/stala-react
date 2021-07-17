@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { resolveHost } from "../utils/host";
 
-function Carousel({ height = 500, carouselName = "carousel" }) {
+function Carousel({ height = 500, carouselId = "carousel" }) {
   const style = { maxHeight: height };
 
   let [activeIndex, setActiveIndex] = useState(0);
@@ -90,7 +90,7 @@ function Carousel({ height = 500, carouselName = "carousel" }) {
 
   return (
     <div
-      id={carouselName}
+      id={carouselId}
       className="carousel slide  p-0 mt-1"
       data-bs-ride="carousel"
       tabIndex={0}
@@ -114,7 +114,7 @@ function Carousel({ height = 500, carouselName = "carousel" }) {
       <button
         className="carousel-control-prev"
         type="button"
-        data-bs-target={"#" + carouselName}
+        data-bs-target={"#" + carouselId}
         data-bs-slide="prev"
         onClick={() => {
           handleClick(false);
@@ -127,7 +127,7 @@ function Carousel({ height = 500, carouselName = "carousel" }) {
       <button
         className="carousel-control-next"
         type="button"
-        data-bs-target={"#" + carouselName}
+        data-bs-target={"#" + carouselId}
         data-bs-slide="next"
         onClick={() => {
           handleClick(true);

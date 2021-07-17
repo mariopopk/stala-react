@@ -1,4 +1,4 @@
-import { Switch, Route, Redirect, useParams } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import NotFound from "./views/404";
 import Home from "./views/Home";
 import Page from "./views/Page";
@@ -8,11 +8,13 @@ import Alert from "./components/Alert";
 import Department from "./views/Department";
 import Footer from "./components/Footer";
 import { connect } from "react-redux";
-import LoginAndSignUp from "./views/LoginAndSignUp";
+// import LoginAndSignUp from "./views/LoginAndSignUp";
 import Product from "./views/Product";
 import ScrollToTop from "./components/ScrollToTop";
 import Cart from "./views/Cart";
-function App({ currentUser }) {
+
+// { currentUser }
+function App() {
   return (
     <div className="">
       <ScrollToTop />
@@ -32,15 +34,13 @@ function App({ currentUser }) {
         />
         <Route path="/site/:slug" children={<Page />} />
 
-        <Route
+        {/* <Route
           path="/login"
           render={() => {
             return currentUser ? <Redirect to="/" /> : <LoginAndSignUp />;
           }}
-        />
-        {/* <Route path="/shop/product/:slug/:color">
-          <Product />
-        </Route> */}
+        /> */}
+
         <Route path="/shop/product/:slug" children={<Product />} />
         <Route path="/cart" children={<Cart />} />
 

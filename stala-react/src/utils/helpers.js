@@ -35,3 +35,7 @@ export function getDepartments(categories) {
     return { id, name };
   });
 }
+
+export function generateRandomNumber(max = 1000) {
+  return Math.floor(Math.random() * max);
+}

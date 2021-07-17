@@ -1,7 +1,7 @@
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import MultiCarousel from "../components/MultiCarousel";
-import ImagesSnapshot from "../components/ImagesSnapshot";
+import CategoryCard from "../components/CategoryCard";
 import Jumbotron from "../components/Jumbotron";
 import { categories as dbCategories } from "../utils/data";
 import { getDepartmentBySlug } from "../utils/helpers";
@@ -289,7 +289,7 @@ function Department() {
         {subcategories.map(({ name, id, image }) => {
           return (
             <div key={id} className="col-6 col-md-3">
-              <ImagesSnapshot
+              <CategoryCard
                 href={`/shop/${department}?categories=${id}`}
                 image={image.url}
                 title={name}

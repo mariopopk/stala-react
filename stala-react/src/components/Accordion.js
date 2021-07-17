@@ -1,22 +1,23 @@
 import { useState } from "react";
+import { generateRandomNumber } from "../utils/helpers";
 
-function Accordion({ accordionName, items }) {
+function Accordion({
+  accordionId = `Accordion-${generateRandomNumber()}`,
+  items,
+}) {
   const [activeAccordionIndex, setActiveAccordionIndex] = useState(-1);
 
   return (
-    <div className="accordion accordion-flush" id={accordionName}>
-      {items.map(({ title, key, body }, i) => {
+    <div className="accordion accordion-flush" id={accordionId}>
+      {items.map((item, i) => {
         const isOpen = i === activeAccordionIndex;
-
         return (
           <AccordionItem
-            key={key}
-            title={title}
-            body={body}
+            {...item}
             isOpen={isOpen}
             i={i}
             setActiveAccordionIndex={setActiveAccordionIndex}
-            accordionName={accordionName}
+            accordionId={accordionId}
           />
         );
       })}
@@ -25,29 +26,28 @@ function Accordion({ accordionName, items }) {
 }
 
 function AccordionItem({
-  accordionName,
+  accordionId,
   isOpen,
   setActiveAccordionIndex,
   title,
   body,
   i,
 }) {
+  const headerId = `${accordionId}-header-${i}`;
+  const collapseId = `${accordionId}-collapse-${i}`;
+
   return (
-    <div className="accordion-item bg-transparent ">
-      <div
-        className="accordion-header alt-font"
-        id={`${accordionName}-header-${i}`}
-      >
+    <div className="accordion-item bg-transparent">
+      <div className="accordion-header alt-font" id={headerId}>
         <button
-          className={
-            "accordion-button bg-transparent px-0 " +
-            (isOpen ? "" : "collapsed")
-          }
+          className={`accordion-button bg-transparent px-0 ${
+            isOpen ? "" : "collapsed"
+          }`}
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target={`#${accordionName}-collapse-${i}`}
+          data-bs-target={`#${collapseId}`}
           aria-expanded={isOpen}
-          aria-controls={`${accordionName}-collapse-${i}`}
+          aria-controls={collapseId}
           onClick={() => {
             if (isOpen) setActiveAccordionIndex(-1);
             else setActiveAccordionIndex(i);
@@ -57,10 +57,10 @@ function AccordionItem({
         </button>
       </div>
       <div
-        id={`${accordionName}-collapse-${i}`}
+        id={collapseId}
         className={`accordion-content ${isOpen ? "show" : ""}`}
-        aria-labelledby={`${accordionName}-header-${i}`}
-        data-bs-parent={`#${accordionName}`}
+        aria-labelledby={headerId}
+        data-bs-parent={`#${accordionId}`}
       >
         <div className="accordion-body px-1 py-2">{body}</div>
       </div>

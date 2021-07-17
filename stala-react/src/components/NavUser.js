@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { setCurrentUser } from "../redux/user/user.actions";
 import Dropdown from "./Dropdown";
 
-function NavUser({ currentUser, setCurrentUser, showText = false }) {
+function NavUser({ currentUser, setCurrentUser }) {
   return (
     <>
       <Dropdown
@@ -21,14 +21,14 @@ function NavUser({ currentUser, setCurrentUser, showText = false }) {
               {`${currentUser.firstName} ${currentUser.lastName}`}
             </Link>
 
-            <a
+            <button
               onClick={() => {
                 setCurrentUser(null);
               }}
               className="dropdown-item "
             >
               Log Out
-            </a>
+            </button>
           </>
         ) : (
           <>

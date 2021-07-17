@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom";
 
-function CartItem({ id, image, name, color, size, price, amount }) {
+function CartItem({
+  id,
+  image,
+  name,
+  selectedColor: color,
+  selectedSize: size,
+  price,
+  amount,
+}) {
   return (
     <div className="card border-0 bg-transparent mb-3">
       <div className="d-flex flex-wrap g-0">
@@ -8,7 +16,7 @@ function CartItem({ id, image, name, color, size, price, amount }) {
           <Link
             to={`/shop/product/${id}?color=${color.toLowerCase()}&size=${size.toLowerCase()}`}
           >
-            <img src={image} className="img-fluid " alt={name} />
+            <img src={image} className="img-fluid" alt={name} />
           </Link>
         </div>
 
@@ -29,10 +37,10 @@ function CartItem({ id, image, name, color, size, price, amount }) {
               style={{ fontSize: "0.9rem", width: 150, maxWidth: 150 }}
             >
               <div className="d-flex justify-content-between">
-                Color: <span>{color}</span>
+                Color: <span className="text-uppercase">{color}</span>
               </div>
               <div className="d-flex justify-content-between">
-                Size: <span>{size}</span>
+                Size: <span className="text-uppercase">{size}</span>
               </div>
             </div>
             <div className="d-flex justify-content-between align-items-center mt-auto w-100 mb-2">
@@ -40,13 +48,15 @@ function CartItem({ id, image, name, color, size, price, amount }) {
                 style={{ maxWidth: 60 }}
                 className="form-select bg-white"
                 aria-label="1"
+                value={amount}
               >
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
+                {[1, 2, 3, 4, 5, 6].map((number) => {
+                  return (
+                    <option key={number} value={number}>
+                      {number}
+                    </option>
+                  );
+                })}
               </select>
               <span className="fw-bold ">${price}</span>
             </div>

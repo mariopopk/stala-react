@@ -1,7 +1,7 @@
 import NavLinks from "./NavLinks";
 import NavLogo from "./NavLogo";
 import NavUtilities from "./NavUtilities";
-import SearchPanel from "./SearchPanel";
+// import SearchPanel from "./SearchPanel";
 // OnScroll Up -> Show Nav Bar and push so other sticky elements remian visible
 
 function NavBar() {

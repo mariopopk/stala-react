@@ -96,15 +96,17 @@ function ShoppingGrid({ location, department: departmentSlug }) {
 
       // Size Filter BELOW
       if (selectedSizes) {
-        const selectedSizesArr = selectedSizes.split(",");
-        const availabilities = selectedSizesArr.map((selectedSize) => {
-          return sizes[selectedSize] && sizes[selectedSize] > 0;
-        });
+        if (sizes) {
+          const selectedSizesArr = selectedSizes.split(",");
+          const availabilities = selectedSizesArr.map((selectedSize) => {
+            return sizes[selectedSize] && sizes[selectedSize] > 0;
+          });
 
-        const matchesSelectedSizes = availabilities.includes(true);
+          const matchesSelectedSizes = availabilities.includes(true);
 
-        if (!matchesSelectedSizes) {
-          return;
+          if (!matchesSelectedSizes) {
+            return;
+          }
         }
       }
       // Size Filter Above

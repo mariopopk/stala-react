@@ -1,4 +1,4 @@
-export const setFilters = (product) => ({
+export const addProduct = (product) => ({
   type: "ADD_PRODUCT",
   payload: product,
 });
