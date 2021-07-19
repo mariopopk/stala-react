@@ -11,6 +11,7 @@ import SizeGuide from "../components/SizeGuide";
 import ProductSizePicker from "../components/ProductSizePicker";
 import ProductInventoryAlert from "../components/ProductInventoryAlert";
 import { useState } from "react";
+import DisappearingAlert from "../components/DisappearingAlert";
 const queryString = require("query-string");
 
 function getProductByColor(color, products) {
@@ -141,6 +142,8 @@ function Product({ addProduct }) {
                       price,
                       amount,
                     });
+                    const cartBtn = document.getElementById("cart-panel");
+                    cartBtn.click();
                   }}
                   disabled={isButtonDisabled}
                   className="btn btn-primary w-100 ms-2 py-2 btn-lg"

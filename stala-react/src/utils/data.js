@@ -165,7 +165,7 @@ export const categories = [
         catchphrase: "New feeling. Discover the latest arrivals.",
         image: {
           url: "https://images.pexels.com/photos/225017/pexels-photo-225017.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-          position: "80% 40%",
+          position: "50% 40%",
         },
         subcategories: [
           {
@@ -244,7 +244,7 @@ export const categories = [
         name: "Boys",
         image: {
           url: "https://images.pexels.com/photos/1094072/pexels-photo-1094072.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-          position: "center 50%",
+          position: "30% 50%",
         },
         catchphrase: "New feeling. Discover the latest arrivals.",
         subcategories: [

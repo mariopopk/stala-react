@@ -3,12 +3,13 @@ import SidePanel from "./SidePanel";
 function CartPanel() {
   return (
     <SidePanel
-      dropdownId="cart-panel"
+      sidePanelId="cart-panel"
       darkMode={false}
+      preferredWidth={600}
       panelTitle={
-        <span className="fs-5 fw-bold d-flex justify-content-center ">
-          My Cart
-        </span>
+        <div className="fs-6 letter-spacing-2 h-100 align-items-center text-uppercase d-flex justify-content-center">
+          <span>My Cart</span>
+        </div>
       }
       title={
         <>
@@ -17,8 +18,20 @@ function CartPanel() {
         </>
       }
     >
-      <div className="px-3 py-4" style={{ maxWidth: 500 }}>
-        <Cart />
+      <div
+        className="px-3 py-4"
+        style={{
+          maxWidth: 700,
+          minHeight: "calc( 100vh - 80px)",
+          background: "inherit",
+        }}
+      >
+        <div
+          className="mx-auto"
+          style={{ maxWidth: 500, background: "inherit" }}
+        >
+          <Cart showCheckOut={true} />
+        </div>
       </div>
     </SidePanel>
   );

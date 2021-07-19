@@ -11,6 +11,7 @@ function SidePanel({
   doneBtn = false,
   btnClassName = "btn btn-responsive",
   panelTitle,
+  preferredWidth = 500,
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -27,7 +28,7 @@ function SidePanel({
   const backdropClassName = darkMode ? "bg-white" : "bg-dark";
 
   const windowWidth = window.innerWidth;
-  const panelWidth = windowWidth > 576 ? windowWidth * 0.6 : windowWidth;
+  const panelWidth = windowWidth > 576 ? preferredWidth : windowWidth;
   // const panelWidth = 576;
 
   const transform = !isOpen && `translate(${panelWidth}px, 0px)`;
@@ -68,7 +69,10 @@ function SidePanel({
             "sidemenu " + containerClassName + " " + (isOpen ? "show" : "")
           }
         >
-          <div className="d-flex flex-wrap p-4">
+          <div
+            style={{ backgroundColor: "inherit" }}
+            className="d-flex flex-wrap px-4 pt-3 pb-2 sticky-top "
+          >
             <div className="col-4">
               <button
                 onClick={() => handleClick(false)}
@@ -81,7 +85,7 @@ function SidePanel({
 
             <div className="col-4">{panelTitle}</div>
           </div>
-          <div>{children}</div>
+          <div className={containerClassName}>{children}</div>
           {doneBtn && (
             <div className="position-fixed w-100" style={{ bottom: 0 }}>
               {" "}

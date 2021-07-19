@@ -178,7 +178,7 @@ $alert-height: 34px;
   transition-delay: 0.3s;
   transition: 0.2s ease-in;
   overflow-y: auto;
-  max-width: 500px;
+  max-width: 100%;
   &.show {
     transition: 0.2s ease-out;
 
@@ -267,7 +267,7 @@ $alert-height: 34px;
   .sidemenu {
     &.show {
       // Managed in component file
-      max-width: 500px;
+      max-width: 700px;
     }
   }
 
