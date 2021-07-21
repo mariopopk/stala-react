@@ -1,17 +1,6 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
-h1, .h1,
-h2,
-.h2,
-h3,
-.h3,
-h4,
-.h4,
-h5,
-.h5,
-h6,
-.h6,
 .alt-font {
   font-family: "Libre Baskerville", serif;
 }
@@ -44,7 +33,7 @@ h6,
   --bs-danger: #be1217;
   --bs-light: #fefaf6;
   --bs-dark: #000;
-  --bs-font-sans-serif: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-sans-serif: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
 }
@@ -174,7 +163,7 @@ ul ol {
 }
 
 dt {
-  font-weight: 700;
+  font-weight: 500;
 }
 
 dd {
@@ -188,7 +177,7 @@ blockquote {
 
 b,
 strong {
-  font-weight: bolder;
+  font-weight: 800;
 }
 
 small, .small {
@@ -270,7 +259,7 @@ kbd {
 kbd kbd {
   padding: 0;
   font-size: 1em;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 figure {
@@ -4425,7 +4414,7 @@ textarea.form-control-lg {
   display: inline-block;
   padding: 0.35em 0.65em;
   font-size: 0.75em;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1;
   color: #fff;
   text-align: center;
@@ -4453,7 +4442,7 @@ textarea.form-control-lg {
 }
 
 .alert-link {
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .alert-dismissible {
@@ -6887,7 +6876,7 @@ textarea.form-control-lg {
 }
 
 .fw-lighter {
-  font-weight: lighter !important;
+  font-weight: 300 !important;
 }
 
 .fw-normal {
@@ -6895,11 +6884,11 @@ textarea.form-control-lg {
 }
 
 .fw-bold {
-  font-weight: 700 !important;
+  font-weight: 500 !important;
 }
 
 .fw-bolder {
-  font-weight: bolder !important;
+  font-weight: 800 !important;
 }
 
 .lh-1 {
@@ -10529,22 +10518,8 @@ textarea.form-control-lg {
 .carousel-control-next {
   top: 45%;
   bottom: 55%;
-  background: white;
+  background: #eeeeee;
   padding: 2.25rem 0.6rem;
-}
-
-.carousel-box h1, .carousel-box .h1,
-.carousel-box h2,
-.carousel-box .h2,
-.carousel-box h3,
-.carousel-box .h3,
-.carousel-box h4,
-.carousel-box .h4,
-.carousel-box h5,
-.carousel-box .h5,
-.carousel-box h6,
-.carousel-box .h6 {
-  letter-spacing: -1px;
 }
 
 .animated-fade {
@@ -10556,6 +10531,15 @@ textarea.form-control-lg {
 .animated-fade.show {
   visibility: visible;
   opacity: 1;
+}
+
+.image-object {
+  max-width: 100%;
+  width: 100%;
+}
+
+.banner-box {
+  width: 100%;
 }
 
 .image-cover {
@@ -10578,6 +10562,11 @@ textarea.form-control-lg {
   font-size: 0.85rem;
 }
 
+[class^=bi-].icon-bold::before,
+[class*=" bi-"].icon-bold::before {
+  font-weight: bold !important;
+}
+
 .product-carousel .carousel-inner {
   display: flex;
 }
@@ -10591,8 +10580,9 @@ textarea.form-control-lg {
 }
 
 .carousel-box {
+  width: 100%;
   background-color: #fefaf6;
-  padding: 2.5rem 1.25rem;
+  padding: 2.5rem 1.5rem;
 }
 
 .backdrop {
@@ -10626,6 +10616,7 @@ textarea.form-control-lg {
   transition: 0.2s ease-in;
   overflow-y: auto;
   max-width: 100%;
+  visibility: hidden;
 }
 .sidemenu.show {
   transition: 0.2s ease-out;
@@ -10693,9 +10684,10 @@ textarea.form-control-lg {
   }
 
   .carousel-box {
-    max-width: 400px;
-    background: rgba(255, 255, 255, 0.92);
-    padding: 3.5rem 2.25rem;
+    min-width: 300px;
+    max-width: 350px;
+    background: rgba(255, 255, 255, 0.925);
+    padding: 1.5rem;
   }
 
   .sidemenu-nav {
@@ -10714,6 +10706,10 @@ textarea.form-control-lg {
 
   .image-snapshot {
     height: 500;
+  }
+
+  .banner-box {
+    width: 500px;
   }
 }
 @media (min-width: 768px) {

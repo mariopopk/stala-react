@@ -4,8 +4,9 @@ import { generateRandomNumber } from "../utils/helpers";
 function Accordion({
   accordionId = `Accordion-${generateRandomNumber()}`,
   items,
+  openIndex = -1,
 }) {
-  const [activeAccordionIndex, setActiveAccordionIndex] = useState(-1);
+  const [activeAccordionIndex, setActiveAccordionIndex] = useState(openIndex);
 
   return (
     <div className="accordion accordion-flush" id={accordionId}>
@@ -38,9 +39,9 @@ function AccordionItem({
 
   return (
     <div className="accordion-item bg-transparent">
-      <div className="accordion-header alt-font" id={headerId}>
+      <div className="accordion-header " id={headerId}>
         <button
-          className={`accordion-button bg-transparent px-0 ${
+          className={`accordion-button bg-transparent  px-0 ${
             isOpen ? "" : "collapsed"
           }`}
           type="button"

@@ -2,7 +2,7 @@ import Carousel from "../components/Carousel";
 import Jumbotron from "../components/Jumbotron";
 import { Link } from "react-router-dom";
 import MultiCarousel from "../components/MultiCarousel";
-
+import Card from "../components/Card";
 function Home() {
   const slides = [
     {
@@ -73,83 +73,51 @@ function Home() {
         {/* Carousel */}
         <Carousel height={800} />
         {/* Shop Kids, Men or Women */}
-        <div className="row">
-          <div className="col-md-6 col-12">
-            <Jumbotron
-              height={500}
-              className="text-white mt-4"
-              title={<h3 className="text-center">Women</h3>}
-              image={{
-                url: "https://deathtostock.imgix.net/000/003/078/original/DTS_Sunny_Premium_4.jpg?w=1083&h=722&fit=clip&dpr=1&auto=compress&q=75&ixlib=js-2.3.1&s=03928d867df308b94abba74d31da1a70",
-                opacity: "0.3",
-                position: "70% 65%",
-              }}
-              button={
-                <Link
-                  to={`/shop/women/categories`}
-                  className="btn btn-outline-light btn-lg "
-                >
-                  Shop All
-                </Link>
-              }
+        <div className="row ">
+          <h2 className="mt-5 fs-4 fw-bold">Departments</h2>
+          <div className="col-md-6 col-12 mt-4">
+            <Card
+              image="https://oldnavy.gap.com/Asset_Archive/ONWeb/content/0020/687/903/assets/210614_66-M2291_W_DP_Sale.jpg"
+              title="Women"
+              url="/shop/women"
+              position="50% 0%"
+            />
+          </div>
+
+          <div className="col-md-6 col-12 mt-4">
+            <Card
+              image="https://oldnavy.gap.com/Asset_Archive/ONWeb/content/0020/640/989/assets/210614_65-M2305_M_DP_Sale.jpg"
+              title="Men"
+              url="/shop/men"
+              position="50% 0%"
             />
           </div>
 
           <div className="col-md-6 col-12">
-            <Jumbotron
-              height={500}
-              className="text-white mt-4"
-              title={<h3 className="text-center">Men</h3>}
-              image={{
-                url: "https://deathtostock.imgix.net/000/003/080/original/DTS_Sunny_Premium_6.jpg?w=1083&h=722&fit=clip&dpr=1&auto=compress&q=75&ixlib=js-2.3.1&s=35f5d7b043dbf13f0ce0c652dcb13c1a",
-                opacity: "0.3",
-                position: "60% 20%",
-              }}
-              button={
-                <Link
-                  to={`/shop/men/categories`}
-                  className="btn btn-outline-light btn-lg "
-                >
-                  Shop All
-                </Link>
-              }
-            />
+            <div className="mt-4">
+              <Card
+                image="https://oldnavy.gap.com/Asset_Archive/ONWeb/content/0020/464/125/assets/210614_64-M2296_B_DP_Sale.jpg"
+                title="Boys"
+                url="/shop/boy"
+                position="50% 0%"
+              />
+            </div>
           </div>
 
-          <div className=" col-12">
-            {" "}
-            <Jumbotron
-              height={500}
-              className="text-white mt-4"
-              title={<h3 className="text-center">Kids</h3>}
-              image={{
-                url: "https://deathtostock.imgix.net/000/003/586/original/RCC_-_DTS_HOME_5.jpg?w=1083&h=722&fit=clip&dpr=1&auto=compress&q=75&ixlib=js-2.3.1&s=5f00d8c44f2c9eb2742d9aa75e119ea3",
-                opacity: "0.3",
-                position: "50% 50%",
-              }}
-              button={
-                <>
-                  <Link
-                    to={`/shop/boys/categories`}
-                    className="btn btn-outline-light btn-lg  mx-2"
-                  >
-                    Shop Boys
-                  </Link>
-
-                  <Link
-                    to={`/shop/girls/categories`}
-                    className="btn btn-outline-light btn-lg "
-                  >
-                    Shop Girls
-                  </Link>
-                </>
-              }
-            />
+          <div className="col-md-6 col-12">
+            <div className="mt-4">
+              <Card
+                image="https://oldnavy.gap.com/Asset_Archive/ONWeb/content/0020/464/084/assets/210614_64-M2295_G_DP_Sale.jpg"
+                title="Girls"
+                url="/shop/girls"
+                position="50% 0%"
+              />
+            </div>
           </div>
         </div>
         {/* What's new */}
-        <h2 className="text-center my-5">Popular Items</h2>
-        <MultiCarousel className="my-5" slides={slides} />
+        <h2 className=" mt-5 mb-3 fs-4">Popular Items</h2>
+        <MultiCarousel viewableSlides={4} slides={slides} />
         {/* <TestingCarousel /> */}
         {/* Shop Sale */}
       </div>

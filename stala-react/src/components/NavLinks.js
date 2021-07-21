@@ -44,12 +44,12 @@ function NavLinks() {
           }
           id="navbarSupportedContent"
         >
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0 text-uppercase  w-100 h-100">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0 text-capitalize w-100 h-100">
             {topCategories.map(({ id, name }) => {
               return (
-                <li key={id} className="nav-item stala-nav-item">
+                <li key={id} className="nav-item  me-3  px-2  ">
                   <NavLink
-                    className="nav-link"
+                    className="text-dark text-decoration-none "
                     activeClassName="active"
                     to={`/shop/${name.toLowerCase()}/categories`}
                   >

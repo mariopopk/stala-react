@@ -1,6 +1,6 @@
 import { resolveHost } from "../utils/host";
 
-function Jumbotron({ title, content, button, image, height, className }) {
+function Jumbotron({ title, children, button, image, height, className }) {
   const style = image
     ? {
         backgroundImage: `linear-gradient(rgba(0, 0, 0, ${
@@ -14,21 +14,8 @@ function Jumbotron({ title, content, button, image, height, className }) {
     : { height };
 
   return (
-    <div
-      className={
-        "py-5 d-flex justify-content-center align-items-center flex-column image-cover  " +
-        className
-      }
-      style={style}
-    >
-      <div className="">
-        <div className={"display-5 text-uppercase"}>{title}</div>
-        <div className="mt-3 text-center ">
-          {content && <p className="mb-4">{content}</p>}
-
-          {button}
-        </div>
-      </div>
+    <div className={"py-5  image-cover  " + className} style={style}>
+      <div className="container d-flex flex-column h-100">{children}</div>
     </div>
   );
 }

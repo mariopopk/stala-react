@@ -70,14 +70,14 @@ export const categories = [
               url: "https://oldnavy.gap.com/Asset_Archive/ONWeb/content/0020/640/989/assets/210614_65-M2305_M_DP_Activewear.jpg",
             },
           },
-          {
-            id: 108,
-            name: "Sale",
-            catchphrase: "",
-            image: {
-              url: "https://oldnavy.gap.com/Asset_Archive/ONWeb/content/0020/464/125/assets/210614_64-KTB_DP_EDMTile_US.svg",
-            },
-          },
+          // {
+          //   id: 108,
+          //   name: "Sale",
+          //   catchphrase: "",
+          //   image: {
+          //     url: "https://oldnavy.gap.com/Asset_Archive/ONWeb/content/0020/464/125/assets/210614_64-KTB_DP_EDMTile_US.svg",
+          //   },
+          // },
         ],
       },
       {
@@ -149,14 +149,14 @@ export const categories = [
               url: "https://oldnavy.gap.com/Asset_Archive/ONWeb/content/0020/687/903/assets/210614_66-M2291_W_DP_SweatshirtsSweatpants.jpg",
             },
           },
-          {
-            id: 209,
-            name: "Sale",
-            catchphrase: "",
-            image: {
-              url: "https://oldnavy.gap.com/Asset_Archive/ONWeb/content/0020/464/125/assets/210614_64-KTB_DP_EDMTile_US.svg",
-            },
-          },
+          // {
+          //   id: 209,
+          //   name: "Sale",
+          //   catchphrase: "",
+          //   image: {
+          //     url: "https://oldnavy.gap.com/Asset_Archive/ONWeb/content/0020/464/125/assets/210614_64-KTB_DP_EDMTile_US.svg",
+          //   },
+          // },
         ],
       },
       {
@@ -229,14 +229,14 @@ export const categories = [
             },
           },
 
-          {
-            id: 409,
-            name: "Sale",
-            catchphrase: "",
-            image: {
-              url: "https://oldnavy.gap.com/Asset_Archive/ONWeb/content/0020/464/125/assets/210614_64-KTB_DP_EDMTile_US.svg",
-            },
-          },
+          // {
+          //   id: 409,
+          //   name: "Sale",
+          //   catchphrase: "",
+          //   image: {
+          //     url: "https://oldnavy.gap.com/Asset_Archive/ONWeb/content/0020/464/125/assets/210614_64-KTB_DP_EDMTile_US.svg",
+          //   },
+          // },
         ],
       },
       {
@@ -304,14 +304,14 @@ export const categories = [
               url: "https://oldnavy.gap.com/Asset_Archive/ONWeb/content/0020/640/989/assets/210614_65-M2305_M_DP_Activewear.jpg",
             },
           },
-          {
-            id: 308,
-            name: "Sale",
-            catchphrase: "",
-            image: {
-              url: "https://oldnavy.gap.com/Asset_Archive/ONWeb/content/0020/464/125/assets/210614_64-KTB_DP_EDMTile_US.svg",
-            },
-          },
+          // {
+          //   id: 308,
+          //   name: "Sale",
+          //   catchphrase: "",
+          //   image: {
+          //     url: "https://oldnavy.gap.com/Asset_Archive/ONWeb/content/0020/464/125/assets/210614_64-KTB_DP_EDMTile_US.svg",
+          //   },
+          // },
         ],
       },
     ],
@@ -323,26 +323,26 @@ export const products = [
     id: 9,
     familyId: "60e9151bfc13ae5bbf000064",
     name: "Cotton Shirt",
-    color: "Black",
+    color: "Orange",
     price: 10.99,
     sizes: { xs: 1, s: 0, m: 2, l: 3, xl: 0, xxl: 0 },
     category: 101,
     department: 100,
     image:
-      "https://calvinklein.scene7.com/is/image/CalvinKlein/24421260_001_alternate1?wid=856&hei=1127&fmt=jpeg&qlt=85%2C0&resMode=sharp2&op_usm=0.9%2C1.0%2C8%2C0&iccEmbed=0",
+      "https://bonobos-prod-s3.imgix.net/products/213758/original/SWEATER_POLO-SWEATER_27915-OR242_1.jpg?1617399872=&w=1920&q=75&auto=format%2Ccompress&fit=clip&cs=srgb",
     categoryName: "Tops",
   },
   {
     id: 20,
     familyId: "60e9151bfc13ae5bbf000064",
     name: "Cotton Shirt",
-    color: "Green",
+    color: "Yellow",
     price: 10.99,
     sizes: { xs: 1, s: 0, m: 2, l: 3, xl: 7, xxl: 3 },
     category: 101,
     department: 100,
     image:
-      "https://calvinklein.scene7.com/is/image/CalvinKlein/24421260_315_alternate1?wid=856&hei=1127&fmt=jpeg&qlt=85%2C0&resMode=sharp2&op_usm=0.9%2C1.0%2C8%2C0&iccEmbed=0",
+      "https://bonobos-prod-s3.imgix.net/products/211829/original/SWEATER_POLO-SWEATER_27704-YM009_1.jpg?1615321312=&w=1920&q=75&auto=format%2Ccompress&fit=clip&cs=srgb",
     categoryName: "Tops",
   },
   {
@@ -355,7 +355,7 @@ export const products = [
     category: 101,
     department: 100,
     image:
-      "https://calvinklein.scene7.com/is/image/CalvinKlein/24421260_425_alternate1?wid=856&hei=1127&fmt=jpeg&qlt=85%2C0&resMode=sharp2&op_usm=0.9%2C1.0%2C8%2C0&iccEmbed=0",
+      "https://bonobos-prod-s3.imgix.net/products/208709/original/SWEATER_POLO-SWEATER_27705-BOY44_1.jpg?1612917587=&w=1920&q=75&auto=format%2Ccompress&fit=clip&cs=srgb",
     categoryName: "Tops",
   },
   {
@@ -368,7 +368,7 @@ export const products = [
     category: 101,
     department: 100,
     image:
-      "https://calvinklein.scene7.com/is/image/CalvinKlein/24421260_274_alternate1?wid=856&hei=1127&fmt=jpeg&qlt=85%2C0&resMode=sharp2&op_usm=0.9%2C1.0%2C8%2C0&iccEmbed=0",
+      "https://bonobos-prod-s3.imgix.net/products/215389/original/SWEATER_POLO-SWEATER_27912-WT615_1.jpg?1621269453=&w=1920&q=75&auto=format%2Ccompress&fit=clip&cs=srgb",
     categoryName: "Tops",
   },
   {
@@ -719,7 +719,7 @@ export const products = [
     color: "Red",
     price: 7.99,
     sizes: { xs: 1, s: 1, m: 2, l: 3, xl: 0, xxl: 3 },
-    category: 108,
+    category: 101,
     department: 100,
     image: "https://oldnavy.gap.com/webcontent/0014/628/122/cn14628122.jpg",
     categoryName: "Sale",
@@ -731,7 +731,7 @@ export const products = [
     color: "Blue",
     price: 7.99,
     sizes: { xs: 1, s: 1, m: 2, l: 3, xl: 0, xxl: 3 },
-    category: 108,
+    category: 101,
     department: 100,
     image: "https://oldnavy.gap.com/webcontent/0015/325/094/cn15325094.jpg",
     categoryName: "Sale",
@@ -758,6 +758,7 @@ export const colors = [
   { name: "Red", alt: "#E22B12" },
   { name: "Orange", alt: "#FF9505" },
   { name: "Pink", alt: "#F88C95" },
+  { name: "Yellow", alt: "#ffe37e" },
 ];
 
 export const keyColors = {
@@ -771,6 +772,7 @@ export const keyColors = {
   red: "#E22B12",
   orange: "#FF9505",
   pink: "#F88C95",
+  yellow: "#ffe37e",
 };
 
 export const priceRanges = [

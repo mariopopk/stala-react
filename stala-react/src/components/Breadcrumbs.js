@@ -30,7 +30,7 @@ function Breadcrumb({ link, name }) {
 function LastBreadcrumb({ name }) {
   return (
     <>
-      <span className="text-capitalize">{name}</span>
+      <span className="text-capitalize fw-bold">{name}</span>
     </>
   );
 }

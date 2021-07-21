@@ -16,7 +16,7 @@ function ShoppingFilters({ location, department }) {
         <Link
           to={location.pathname}
           className={
-            "btn my-2 w-100 btn-outline-primary" +
+            "btn my-2 w-100 btn-outline-primary fw-bold " +
             (activeFilters > 0 ? "" : "border-0 disabled ")
           }
         >
@@ -28,6 +28,7 @@ function ShoppingFilters({ location, department }) {
       </div>
 
       <Accordion
+        openIndex={0}
         items={[
           {
             title: "Department",

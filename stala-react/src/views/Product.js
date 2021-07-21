@@ -83,7 +83,7 @@ function Product({ addProduct }) {
     <>
       <div className="container">
         <div className="row">
-          <div className="mb-5 mt-3 d-flex d-md-block justify-content-center">
+          <div className="mb-5 mt-4 d-flex d-md-block justify-content-center">
             <Breadcrumbs links={links} />
           </div>
           <div className="col-md-6 col-12 mt-3">
@@ -93,7 +93,7 @@ function Product({ addProduct }) {
           </div>
           <div className="col-md-6 col-12 mt-3">
             <div style={{ maxWidth: 500 }}>
-              <p className="display-5">
+              <p className="display-5 fw-bold">
                 {name} - {color}
               </p>
               <p className="lead">${price}</p>
@@ -146,7 +146,7 @@ function Product({ addProduct }) {
                     cartBtn.click();
                   }}
                   disabled={isButtonDisabled}
-                  className="btn btn-primary w-100 ms-2 py-2 btn-lg"
+                  className="btn btn-primary w-100 ms-2 py-3  fw-bold"
                 >
                   Add to Cart
                 </button>

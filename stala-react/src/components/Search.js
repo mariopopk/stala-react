@@ -6,7 +6,7 @@ function Search() {
       <form className="">
         <label
           htmlFor="search-stala-shop"
-          className="form-label letter-spacing-2 text-uppercase"
+          className="form-label letter-spacing-1 fw-bold fs-5 alt-font"
         >
           Search
         </label>
@@ -14,10 +14,10 @@ function Search() {
           <input
             type="text"
             id="search-stala-shop"
-            className="form-control text-white border-light py-2 me-3"
+            className="form-control border-primary py-2 me-1"
             style={{ maxWidth: 500, borderWidth: 0, borderBottomWidth: 1 }}
           />
-          <Link to="/search/" className="btn btn-outline-light  ">
+          <Link to="/search/" className="btn  ">
             <i className="bi bi-search"></i>
             <span className="visually-hidden">Search Query</span>
           </Link>

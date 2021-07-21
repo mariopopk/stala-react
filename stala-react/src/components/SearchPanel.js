@@ -4,11 +4,11 @@ import SidePanel from "./SidePanel";
 function SearchPanel() {
   return (
     <SidePanel
-      darkMode={true}
+      darkMode={false}
       dropdownId="search-panel"
       title={
         <>
-          <i className="bi bi-search"></i>
+          <i className="bi bi-search "></i>
           <span className="visually-hidden">Search Products</span>
         </>
       }

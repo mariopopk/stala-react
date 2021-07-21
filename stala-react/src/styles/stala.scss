@@ -79,17 +79,8 @@ $alert-height: 34px;
   // opacity: 0;
   top: 45%;
   bottom: 55%;
-  background: white;
+  background: rgb(238, 238, 238);
   padding: 2.25rem 0.6rem;
-}
-
-.carousel-box h1,
-.carousel-box h2,
-.carousel-box h3,
-.carousel-box h4,
-.carousel-box h5,
-.carousel-box h6 {
-  letter-spacing: -1px;
 }
 
 .animated-fade {
@@ -101,6 +92,16 @@ $alert-height: 34px;
     visibility: visible;
     opacity: 1;
   }
+}
+
+//
+.image-object {
+  max-width: 100%;
+  width: 100%;
+}
+
+.banner-box {
+  width: 100%;
 }
 
 // Jumbotron
@@ -125,6 +126,11 @@ $alert-height: 34px;
   font-size: 0.85rem;
 }
 
+[class^="bi-"].icon-bold::before,
+[class*=" bi-"].icon-bold::before {
+  font-weight: bold !important;
+}
+
 .product-carousel {
   .carousel-inner {
     display: flex;
@@ -142,8 +148,9 @@ $alert-height: 34px;
   }
 }
 .carousel-box {
+  width: 100%;
   background-color: $light;
-  padding: 2.5rem 1.25rem;
+  padding: 2.5rem 1.5rem;
 }
 
 // SideMenu
@@ -179,6 +186,8 @@ $alert-height: 34px;
   transition: 0.2s ease-in;
   overflow-y: auto;
   max-width: 100%;
+  visibility: hidden;
+
   &.show {
     transition: 0.2s ease-out;
 
@@ -249,9 +258,10 @@ $alert-height: 34px;
   }
 
   .carousel-box {
-    max-width: 400px;
-    background: hsla(0, 0%, 100%, 0.92);
-    padding: 3.5rem 2.25rem;
+    min-width: 300px;
+    max-width: 350px;
+    background: rgba(255, 255, 255, 0.925);
+    padding: 1.5rem;
   }
 
   .sidemenu-nav {
@@ -273,6 +283,10 @@ $alert-height: 34px;
 
   .image-snapshot {
     height: 500;
+  }
+
+  .banner-box {
+    width: 500px;
   }
 }
 

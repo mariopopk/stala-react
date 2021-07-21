@@ -2,9 +2,9 @@ import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import MultiCarousel from "../components/MultiCarousel";
 import CategoryCard from "../components/CategoryCard";
-import Jumbotron from "../components/Jumbotron";
 import { categories as dbCategories } from "../utils/data";
 import { getDepartmentBySlug } from "../utils/helpers";
+import Banner from "../components/Banner";
 
 function Department() {
   let { department } = useParams();
@@ -267,40 +267,50 @@ function Department() {
 
   return (
     <>
-      <Jumbotron
-        className="text-white"
-        title={<h1>{`Shop for ${name}`}</h1>}
-        image={{ url: image.url, position: image.position, opacity: "0.4" }}
-        height={700}
-        button={
-          <Link
-            to={`/shop/${department}`}
-            className="btn btn-outline-light btn-lead btn-lg "
-          >
-            Shop All
-          </Link>
-        }
-        content={catchphrase}
-        position="center"
-      />
-
-      <h3 className="text-center my-5">Categories</h3>
-      <div className="d-flex flex-wrap container mt-5">
-        {subcategories.map(({ name, id, image }) => {
-          return (
-            <div key={id} className="col-6 col-md-3">
-              <CategoryCard
-                href={`/shop/${department}?categories=${id}`}
-                image={image.url}
-                title={name}
-              />
+      <div className="container my-5">
+        <Banner
+          className="w-100"
+          image={{ url: image.url, position: image.position, opacity: "0.3" }}
+          height={350}
+          children={
+            <div className="bg-light banner-box p-5 h-100 d-flex align-items-center">
+              <div>
+                <h1 className="mt-0 alt-font">{`Shop ${name}`}</h1>
+                {catchphrase && <p className="my-4">{catchphrase}</p>}
+                <Link
+                  to={`/shop/${department}`}
+                  className="btn  btn-outline-primary fw-bold"
+                >
+                  Shop All <i className="bi bi-arrow-right"></i>
+                </Link>
+              </div>
             </div>
-          );
-        })}
+          }
+          position="center"
+        />
       </div>
 
-      <h3 className="text-center my-5">Our Greatest Hits</h3>
+      <div className="container mt-5">
+        <h3 className=" mb-3">Categories</h3>
+
+        <div className="d-flex flex-wrap  ">
+          {subcategories.map(({ name, id, image }) => {
+            return (
+              <div key={id} className="col-6 col-md-3">
+                <CategoryCard
+                  href={`/shop/${department}?categories=${id}`}
+                  image={image.url}
+                  title={name}
+                />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
       <div className=" container mt-5">
+        <h3 className=" mb-3">Our Greatest Hits</h3>
+
         <MultiCarousel slides={slides[id]} />
       </div>
     </>

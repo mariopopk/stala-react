@@ -6,14 +6,10 @@ function CartPanel() {
       sidePanelId="cart-panel"
       darkMode={false}
       preferredWidth={600}
-      panelTitle={
-        <div className="fs-6 letter-spacing-2 h-100 align-items-center text-uppercase d-flex justify-content-center">
-          <span>My Cart</span>
-        </div>
-      }
+      panelTitle={<div className="text-center alt-font lead">My Cart</div>}
       title={
         <>
-          <i className="bi bi-cart"></i>
+          <i className="bi bi-cart "></i>
           <span className="visually-hidden">My Cart</span>
         </>
       }

@@ -7,20 +7,29 @@ function Carousel({ height = 500, carouselId = "carousel" }) {
 
   let [activeIndex, setActiveIndex] = useState(0);
 
+  //  2.25 x 1
   const slides = [
     {
-      id: 1,
-      link: "/shop/women?categories=202",
+      id: 4,
+      link: "/shop/men",
       caption: (
-        <div className=" justify-content-start align-items-center h-100">
+        <div className=" justify-content-center  align-items-center h-100">
           <div className="text-center carousel-box ">
-            <h4 className="">IT'S SUMMER TIME</h4>
-            <p className=" m-0">50% off in selected items</p>
+            <small className="text-uppercase fw-bolder mb-2">Introducing</small>
+            <p className=" alt-font fs-2 letter-spacing-1 my-2">
+              Gym Tees &amp; Shorts
+            </p>
+            <p className="my-0">
+              Performance for the gym. Comfort for everyday life
+            </p>
+            <p className="my-4 fw-bold">
+              Shop Now <i className="bi bi-arrow-right"></i>
+            </p>
           </div>
         </div>
       ),
       img: {
-        url: "https://deathtostock.imgix.net/000/003/691/original/5.jpg?w=1083&h=722&fit=clip&dpr=1&auto=compress&q=75&ixlib=js-2.3.1&s=9b44c7bb012d420ba548cc2d9c0a178b",
+        url: "/uploads/stala_image_edb53d3451.jpg",
         alt: "New Styles this season",
       },
     },
@@ -28,11 +37,18 @@ function Carousel({ height = 500, carouselId = "carousel" }) {
       id: 2,
       link: "/shop/women?categories=203",
       caption: (
-        <div className=" justify-content-start align-items-center h-100">
-          <div className="text-center carousel-box bg-light ">
-            <h4 className="text-uppercase">Summer Specials</h4>
-            <p className=" m-0">
-              Get moving this summer with our brand new styles
+        <div className="d-flex justify-content-start  align-items-center h-100 ">
+          <div className="text-center carousel-box">
+            <small className="text-uppercase fw-bolder mb-2">
+              Lights. Sun.
+            </small>
+
+            <p className=" alt-font fs-2 letter-spacing-1 my-2 ">Summer</p>
+            <p className="my-0">
+              Breathable fabrics for next-level comfort. It's vacation time.
+            </p>
+            <p className="my-4 fw-bold">
+              Shop Now <i className="bi bi-arrow-right"></i>
             </p>
           </div>
         </div>
@@ -46,18 +62,30 @@ function Carousel({ height = 500, carouselId = "carousel" }) {
       id: 3,
       link: "/shop/women?categories=209",
       caption: (
-        <div className=" justify-content-start  align-items-center h-100">
-          <div className="text-center carousel-box ">
-            <h4 className="text-uppercase">Sun. Light.</h4>
-            <p className=" m-0">50% off in selected items</p>
+        <div className="d-flex justify-content-start  align-items-center h-100 ">
+          <div className="text-center carousel-box">
+            <small className="text-uppercase fw-bolder mb-2">Discover</small>
+
+            <p className=" alt-font fs-2 letter-spacing-1 my-2 ">
+              2021 Men's Collection
+            </p>
+            <p className="my-0 ">
+              Discover new styles this season. Ultimate Comfort. Limited
+              Edition.
+            </p>
+            <p className="my-4 fw-bold">
+              Shop Now <i className="bi bi-arrow-right"></i>
+            </p>
           </div>
         </div>
       ),
       img: {
-        url: "/uploads/womens_8_34a03d357d.jpg",
+        url: "/uploads/Mens_7db2d19c50.jpg",
         alt: "New Styles this season",
       },
     },
+
+    // https://bonobos-contentful.imgix.net/1zbm708fksg8/1Abf8SuiEN9fXcmcxJyv2L/850e4d7214e146bf9c23dd9ddf19b774/HP-Banner-Wedding-June-Desktop.jpg?w=1920&q=75&auto=format%2Ccompress&fit=clip&cs=srgb
   ];
   const handleClick = (moveForward) => {
     if (moveForward) {

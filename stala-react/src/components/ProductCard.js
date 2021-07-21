@@ -14,8 +14,8 @@ function ProductCard({
       <img src={resolveHost(image)} className="img-fluid" alt={imageAlt} />
       <div className="mt-2">
         <p className="my-1">{price}</p>
-        <span className="text-muted letter-spacing-1">{title}</span>
-        <p className="my-1 letter-spacing-1">{category}</p>
+        <span className=" letter-spacing-1">{title}</span>
+        <p className="my-1 letter-spacing-1 fw-light ">{category}</p>
       </div>
     </div>
   );
