@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-import { keyColors } from "../utils/data";
+import { colorsMap } from "../utils/data";
 const queryString = require("query-string");
 
 function ProductColorPicker({ colorOptions }) {
@@ -35,7 +35,7 @@ function ProductColorPicker({ colorOptions }) {
                 (isColorSelected ? "bi-check-circle-fill " : "bi-circle-fill ")
               }
               style={{
-                color: keyColors[colorOption],
+                color: colorsMap[colorOption],
               }}
             ></i>
           </NavLink>

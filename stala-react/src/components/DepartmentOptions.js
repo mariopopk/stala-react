@@ -13,7 +13,7 @@ function DepartmentOptions() {
             <li key={id}>
               <NavLink
                 className="text-decoration-none text-capitalize"
-                activeClassName="fw-bold active"
+                activeClassName="fw-bold active text-decoration-underline"
                 to={`/shop/${department}`}
               >
                 {department}

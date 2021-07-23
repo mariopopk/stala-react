@@ -7,7 +7,7 @@ import NavUtilities from "./NavUtilities";
 function NavBar() {
   return (
     <nav
-      className="navbar navbar-expand-lg navbar-light bg-white sticky-top w-100 "
+      className="navbar navbar-expand-lg navbar-light bg-white sticky-top w-100 border-bottom"
       style={{ zIndex: 10000 }}
     >
       <div className="container font-smaller-lg">

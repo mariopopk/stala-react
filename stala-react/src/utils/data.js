@@ -761,7 +761,7 @@ export const colors = [
   { name: "Yellow", alt: "#ffe37e" },
 ];
 
-export const keyColors = {
+export const colorsMap = {
   black: "#2D3A3A",
   white: "#E7EEEB",
   gray: "#ADADAD",

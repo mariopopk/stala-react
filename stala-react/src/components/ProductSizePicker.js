@@ -31,7 +31,7 @@ function ProductSizePicker({ sizesInventory = {} }) {
         </span>
       </div>
       <ul className="list-unstyled ">
-        <div className="row row-cols-3 g-3" style={{ maxWidth: 250 }}>
+        <div className="row row-cols-3 g-2" style={{ maxWidth: 250 }}>
           {sizesOptions.map((sizeOption) => {
             const inventoryCount = sizesInventory[sizeOption];
             const link = `${location.pathname}?${replaceQuery(
@@ -50,7 +50,7 @@ function ProductSizePicker({ sizesInventory = {} }) {
                   activeClassName={`btn-primary ${
                     inventoryCount < 1 ? "disabled" : ""
                   }`}
-                  className={`btn btn-sm border text-uppercase w-100 py-3 ${
+                  className={`btn btn-sm border text-uppercase w-100 py-3 px-1 ${
                     inventoryCount < 1 ? "text-decoration-line-through" : ""
                   }`}
                 >

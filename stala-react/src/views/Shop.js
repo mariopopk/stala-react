@@ -33,7 +33,9 @@ function Shop() {
             </div>
           </div>
           <div className="col-md-4 col-12">
-            <h2 className="text-capitalize text-center my-5">{department}</h2>
+            <h2 className="text-capitalize text-center my-5 alt-font">
+              {department}
+            </h2>
           </div>
           <div className="col-md-4 col-12"></div>
         </div>

@@ -1,6 +1,11 @@
 import { resolveHost } from "../utils/host";
 
-function Banner({ children, image, height, className = "bg-light text-dark" }) {
+function Banner({
+  children,
+  image,
+  height,
+  className = "bg-tertiary text-dark",
+}) {
   //   const style = image
   //     ? {
   //         backgroundImage: `linear-gradient(rgba(0, 0, 0, ${
@@ -14,9 +19,14 @@ function Banner({ children, image, height, className = "bg-light text-dark" }) {
   //     : { height };
 
   return (
-    <div className={"d-lg-inline-flex justify-content-center " + className}>
+    <div
+      className={
+        "d-lg-inline-flex justify-content-center flex-row-reverse   " +
+        className
+      }
+    >
       <img
-        className="flex-fill image-object"
+        className="flex-fill image-object "
         style={{
           objectFit: "cover",
           height,
@@ -24,7 +34,7 @@ function Banner({ children, image, height, className = "bg-light text-dark" }) {
         }}
         src={resolveHost(image.url)}
       />
-      <div className="d-flex flex-column ">{children}</div>
+      <div className=" d-flex flex-column ">{children}</div>
     </div>
   );
 }

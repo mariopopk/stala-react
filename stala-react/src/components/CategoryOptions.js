@@ -30,7 +30,7 @@ function CategoryOptions({ location, department }) {
                   return isActiveFilter;
                 }}
                 className="text-decoration-none checkbox-item"
-                activeClassName="fw-bold"
+                activeClassName="fw-bold "
                 to={`/shop/${department}?${query}`}
               >
                 {isActiveFilter ? (

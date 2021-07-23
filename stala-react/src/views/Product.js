@@ -93,7 +93,7 @@ function Product({ addProduct }) {
           </div>
           <div className="col-md-6 col-12 mt-3">
             <div style={{ maxWidth: 500 }}>
-              <p className="display-5 fw-bold">
+              <p className="fs-2 fw-bold">
                 {name} - {color}
               </p>
               <p className="lead">${price}</p>

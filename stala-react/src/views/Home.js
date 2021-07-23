@@ -79,7 +79,7 @@ function Home() {
             <Card
               image="https://oldnavy.gap.com/Asset_Archive/ONWeb/content/0020/687/903/assets/210614_66-M2291_W_DP_Sale.jpg"
               title="Women"
-              url="/shop/women"
+              url="/shop/women/categories"
               position="50% 0%"
             />
           </div>
@@ -88,7 +88,7 @@ function Home() {
             <Card
               image="https://oldnavy.gap.com/Asset_Archive/ONWeb/content/0020/640/989/assets/210614_65-M2305_M_DP_Sale.jpg"
               title="Men"
-              url="/shop/men"
+              url="/shop/men/categories"
               position="50% 0%"
             />
           </div>
@@ -98,7 +98,7 @@ function Home() {
               <Card
                 image="https://oldnavy.gap.com/Asset_Archive/ONWeb/content/0020/464/125/assets/210614_64-M2296_B_DP_Sale.jpg"
                 title="Boys"
-                url="/shop/boy"
+                url="/shop/boys/categories"
                 position="50% 0%"
               />
             </div>
@@ -109,7 +109,7 @@ function Home() {
               <Card
                 image="https://oldnavy.gap.com/Asset_Archive/ONWeb/content/0020/464/084/assets/210614_64-M2295_G_DP_Sale.jpg"
                 title="Girls"
-                url="/shop/girls"
+                url="/shop/girls/categories"
                 position="50% 0%"
               />
             </div>

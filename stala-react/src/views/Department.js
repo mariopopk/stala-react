@@ -273,7 +273,7 @@ function Department() {
           image={{ url: image.url, position: image.position, opacity: "0.3" }}
           height={350}
           children={
-            <div className="bg-light banner-box p-5 h-100 d-flex align-items-center">
+            <div className="bg-tertiary banner-box p-5 h-100 d-flex align-items-center">
               <div>
                 <h1 className="mt-0 alt-font">{`Shop ${name}`}</h1>
                 {catchphrase && <p className="my-4">{catchphrase}</p>}

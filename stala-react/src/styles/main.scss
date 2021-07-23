@@ -22,10 +22,34 @@
 
 $primary: #3a3a3a;
 $secondary: #aaa;
-$danger: #be1217;
 $success: #3e7957;
-$light: #fefaf6;
+$info: #6ea8fe;
+$warning: #ffc107;
+$danger: #be1217;
+$light: #f8f9fa;
 $dark: #000;
+$tertiary: #f5f3ef;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+);
+
+$custom-colors: (
+  "tetiary": $tertiary,
+);
+
+.bg-tertiary {
+  background-color: $tertiary;
+}
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
 
 $enable-rounded: false;
 
@@ -83,4 +107,5 @@ $font-weight-bold: 500;
 $font-weight-bolder: 800;
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
+
 @import "./stala.scss";

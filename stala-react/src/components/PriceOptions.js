@@ -28,6 +28,7 @@ function PriceOptions({ location, department }) {
                 activeClassName="fw-bold  "
                 to={`/shop/${department}?${query}`}
               >
+                {isActiveFilter && <i className="bi bi-check"></i>}
                 {priceRange}
               </NavLink>
             </li>

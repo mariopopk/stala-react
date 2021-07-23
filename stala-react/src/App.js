@@ -20,8 +20,8 @@ function App() {
       <ScrollToTop />
 
       <Alert>
-        Free shipping on 2+ Items <span className="mx-2">|</span> Extra 20% off
-        sale
+        Free shipping on 2+ Items <span className="mx-2">|</span> 20% off sale{" "}
+        <span className="mx-2">|</span>
       </Alert>
       <NavBar />
       <Switch>

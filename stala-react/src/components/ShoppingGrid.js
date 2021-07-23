@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { products, categories } from "../utils/data";
 import { getDepartmentById, getDepartmentBySlug } from "../utils/helpers";
 import { lookUpQueryValue } from "../utils/queryStrings";
+import FilterTags from "./FilterTags";
 const queryString = require("query-string");
 
 function ShoppingGrid({ location, department: departmentSlug }) {
@@ -130,15 +131,12 @@ function ShoppingGrid({ location, department: departmentSlug }) {
     }
   );
 
-  return <div className="d-flex flex-wrap">{showProducts}</div>;
+  return (
+    <div>
+      <FilterTags {...queryObj} />
+      <div className="d-flex flex-wrap">{showProducts}</div>
+    </div>
+  );
 }
-
-// console.log(
-//   queryStr,
-//   selectedCategories,
-//   selectedColors,
-//   selectedPriceRanges,
-//   selectedSizes
-// );
 
 export default ShoppingGrid;

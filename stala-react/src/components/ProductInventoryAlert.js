@@ -3,7 +3,7 @@ function ProductInventoryAlert({ selectedSize, sizesInventory }) {
     <>
       {selectedSize && sizesInventory[selectedSize] < 1 ? (
         <div
-          className="ps-3 border-danger text-danger letter-spacing-1 lead"
+          className="ps-3 border-danger text-danger letter-spacing-1 fs-5"
           role="alert"
           style={{
             borderWidth: "0 0 0 4px",
@@ -13,7 +13,7 @@ function ProductInventoryAlert({ selectedSize, sizesInventory }) {
           Size is not available
         </div>
       ) : (
-        <span className="text-muted letter-spacing-1 lead">In Stock</span>
+        <span className="text-muted letter-spacing-1  fs-5">In Stock</span>
       )}
     </>
   );

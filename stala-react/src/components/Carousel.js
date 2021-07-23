@@ -11,12 +11,12 @@ function Carousel({ height = 500, carouselId = "carousel" }) {
   const slides = [
     {
       id: 4,
-      link: "/shop/men",
+      link: "/shop/men?categories=107",
       caption: (
         <div className=" justify-content-center  align-items-center h-100">
           <div className="text-center carousel-box ">
             <small className="text-uppercase fw-bolder mb-2">Introducing</small>
-            <p className=" alt-font fs-2 letter-spacing-1 my-2">
+            <p className=" alt-font fs-1 letter-spacing-1 my-2">
               Gym Tees &amp; Shorts
             </p>
             <p className="my-0">
@@ -35,7 +35,7 @@ function Carousel({ height = 500, carouselId = "carousel" }) {
     },
     {
       id: 2,
-      link: "/shop/women?categories=203",
+      link: "/shop/women?categories=202",
       caption: (
         <div className="d-flex justify-content-start  align-items-center h-100 ">
           <div className="text-center carousel-box">
@@ -43,7 +43,7 @@ function Carousel({ height = 500, carouselId = "carousel" }) {
               Lights. Sun.
             </small>
 
-            <p className=" alt-font fs-2 letter-spacing-1 my-2 ">Summer</p>
+            <p className=" alt-font fs-1 letter-spacing-1 my-2 ">Summer</p>
             <p className="my-0">
               Breathable fabrics for next-level comfort. It's vacation time.
             </p>
@@ -60,13 +60,13 @@ function Carousel({ height = 500, carouselId = "carousel" }) {
     },
     {
       id: 3,
-      link: "/shop/women?categories=209",
+      link: "/shop/men?categories=201",
       caption: (
         <div className="d-flex justify-content-start  align-items-center h-100 ">
           <div className="text-center carousel-box">
             <small className="text-uppercase fw-bolder mb-2">Discover</small>
 
-            <p className=" alt-font fs-2 letter-spacing-1 my-2 ">
+            <p className=" alt-font fs-1 letter-spacing-1 my-2 ">
               2021 Men's Collection
             </p>
             <p className="my-0 ">
@@ -119,7 +119,7 @@ function Carousel({ height = 500, carouselId = "carousel" }) {
   return (
     <div
       id={carouselId}
-      className="carousel slide  p-0 mt-1"
+      className="carousel slide  p-0 "
       data-bs-ride="carousel"
       tabIndex={0}
       onKeyDown={handleKeyDown}
